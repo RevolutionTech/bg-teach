@@ -7,6 +7,8 @@
     "start": "parcel src/index.html",
     "build": "parcel build src/index.html",
     "typecheck": "tsc --noemit",
+    "lint": "eslint . --ext .ts,.tsx",
+    "lint:fix": "eslint --fix . --ext .ts,.tsx"
   },
   "browserslist": "defaults and supports async-functions",
   "dependencies": {
@@ -17,7 +19,11 @@
   "devDependencies": {
     "@types/react": "^18.0.14",
     "@types/react-dom": "^18.0.5",
+    "@typescript-eslint/eslint-plugin": "^5.29.0",
+    "@typescript-eslint/parser": "^5.29.0",
     "autoprefixer": "^10.4.0",
+    "eslint": "^8.18.0",
+    "eslint-plugin-react": "^7.30.1",
     "parcel": "^2.6.2",
     "postcss": "^8.4.14",
     "prettier": "^2.5.1",
