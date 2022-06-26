@@ -1,0 +1,30 @@
+{
+  "name": "bg-teach",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "clean": "rm dist/bundle.js",
+    "start": "parcel src/index.html",
+    "build-prod": "parcel build src/index.html"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "tailwindcss": "^3.0.1"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5",
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "@babel/preset-react": "^7.16.0",
+    "@types/react": "^17.0.37",
+    "@types/react-dom": "^17.0.11",
+    "postcss-modules": "^4.2.2",
+    "autoprefixer": "^10.4.0",
+    "prettier": "^2.5.1"
+  }
+}
