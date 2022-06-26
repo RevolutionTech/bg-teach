@@ -1,14 +1,12 @@
 {
   "name": "bg-teach",
   "version": "1.0.0",
-  "description": "",
-  "keywords": [],
-  "author": "",
   "license": "ISC",
   "scripts": {
-    "clean": "rm dist/bundle.js",
+    "clean": "rimraf .parcel-cache dist",
     "start": "parcel src/index.html",
-    "build-prod": "parcel build src/index.html"
+    "build": "parcel build src/index.html",
+    "typecheck": "tsc --noemit",
   },
   "browserslist": "defaults and supports async-functions",
   "dependencies": {
