@@ -1,6 +1,6 @@
 # Western Legends
 
-- [ ] Theme & Vibe
+- [ ] Theme & vibe
   - [ ] Sandbox
   - [ ] Outlaws: rob bank, rustle cattle, steal
   - [ ] Marshals: fight bandits, wrangle cattle, arrest Wanted players
