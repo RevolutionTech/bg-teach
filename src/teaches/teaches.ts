@@ -1,4 +1,4 @@
-import { keyBy } from "lodash";
+import { keyBy, sortBy } from "lodash";
 
 import TragedyLooper from "url:./tragedy-looper.md";
 import Tzolkin from "url:./tzolkin.md";
@@ -10,13 +10,20 @@ export interface TeachInfo {
   notes: string;
 }
 
-export const TEACHES: TeachInfo[] = [
-  {
-    teachId: "western-legends",
-    title: "Western Legends",
-    notes: WesternLegends,
-  },
-  { teachId: "tzolkin", title: "Tzolk'in", notes: Tzolkin },
-  { teachId: "tragedy-looper", title: "Tragedy Looper", notes: TragedyLooper },
-];
+export const TEACHES: TeachInfo[] = sortBy(
+  [
+    {
+      teachId: "tragedy-looper",
+      title: "Tragedy Looper",
+      notes: TragedyLooper,
+    },
+    { teachId: "tzolkin", title: "Tzolk'in", notes: Tzolkin },
+    {
+      teachId: "western-legends",
+      title: "Western Legends",
+      notes: WesternLegends,
+    },
+  ],
+  "title"
+);
 export const TEACH_BY_ID = keyBy(TEACHES, "teachId");
