@@ -28,19 +28,22 @@ const Teach = () => {
 
   const markdown = useMarkdownString(teach.notes);
   return (
-    <ReactMarkdown
-      components={{
-        input: ({
-          type,
-          ...props
-        }: React.InputHTMLAttributes<HTMLInputElement>) => (
-          <input type={type} {...(type === "checkbox" ? {} : props)} />
-        ),
-      }}
-      rehypePlugins={[remarkGfm]}
-    >
-      {markdown}
-    </ReactMarkdown>
+    <>
+      <a href="/">Back home</a>
+      <ReactMarkdown
+        components={{
+          input: ({
+            type,
+            ...props
+          }: React.InputHTMLAttributes<HTMLInputElement>) => (
+            <input type={type} {...(type === "checkbox" ? {} : props)} />
+          ),
+        }}
+        rehypePlugins={[remarkGfm]}
+      >
+        {markdown}
+      </ReactMarkdown>
+    </>
   );
 };
 
