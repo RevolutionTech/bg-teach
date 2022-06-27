@@ -1,13 +1,19 @@
 import * as React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+import NotFound from "./NotFound";
+import TableOfContents from "./TableOfContents";
 import Teach from "./Teach";
-import { TeachInfo, TEACHES } from "./teaches/teaches";
 
 const App = () => (
   <>
-    {TEACHES.map((teach: TeachInfo) => (
-      <Teach key={teach.title} notes={teach.notes} />
-    ))}
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<TableOfContents />} />
+        <Route path="teach/:teachId" element={<Teach />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </BrowserRouter>
   </>
 );
 

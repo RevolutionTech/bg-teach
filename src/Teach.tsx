@@ -1,6 +1,10 @@
 import * as React from "react";
+import { useParams } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+
+import { TEACH_BY_ID } from "./teaches/teaches";
+import NotFound from "./NotFound";
 
 const useMarkdownString = (url: string) => {
   const [markdown, setMarkdown] = React.useState<string>("");
@@ -12,12 +16,17 @@ const useMarkdownString = (url: string) => {
   return markdown;
 };
 
-interface TeachProps {
-  notes: string;
-}
+const Teach = () => {
+  const { teachId } = useParams();
+  if (teachId == null) {
+    return <NotFound />;
+  }
+  const teach = TEACH_BY_ID[teachId];
+  if (teach == null) {
+    return <NotFound />;
+  }
 
-const Teach = (props: TeachProps) => {
-  const markdown = useMarkdownString(props.notes);
+  const markdown = useMarkdownString(teach.notes);
   return (
     <ReactMarkdown
       components={{
