@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
@@ -29,7 +29,7 @@ const Teach = () => {
   const markdown = useMarkdownString(teach.notes);
   return (
     <>
-      <a href="/">Back home</a>
+      <Link to="/">Back home</Link>
       <ReactMarkdown
         components={{
           input: ({

@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Link } from "react-router-dom";
 
 import { TEACHES } from "./teaches/teaches";
 
@@ -8,7 +9,7 @@ const TableOfContents = () => (
     <ul>
       {TEACHES.map((teach) => (
         <li key={teach.teachId}>
-          <a href={`teach/${teach.teachId}`}>{teach.title}</a>
+          <Link to={`teach/${teach.teachId}`}>{teach.title}</Link>
         </li>
       ))}
     </ul>
