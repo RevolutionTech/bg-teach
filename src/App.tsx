@@ -1,15 +1,13 @@
 import * as React from "react";
 
 import Teach from "./Teach";
-import TragedyLooper from "url:./teaches/tragedy-looper.md";
-import Tzolkin from "url:./teaches/tzolkin.md";
-import WesternLegends from "url:./teaches/western-legends.md";
+import { TeachInfo, TEACHES } from "./teaches/teaches";
 
 const App = () => (
   <>
-    <Teach notes={WesternLegends} />
-    <Teach notes={Tzolkin} />
-    <Teach notes={TragedyLooper} />
+    {TEACHES.map((teach: TeachInfo) => (
+      <Teach key={teach.title} notes={teach.notes} />
+    ))}
   </>
 );
 
