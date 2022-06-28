@@ -1,5 +1,13 @@
 import * as React from "react";
 
-const NotFound = () => <h1>404 Not Found!</h1>;
+import Header from "./molecules/Header";
+import HomeLink from "./molecules/HomeLink";
+
+const NotFound = () => (
+  <>
+    <HomeLink />
+    <Header>404 Not Found!</Header>
+  </>
+);
 
 export default NotFound;

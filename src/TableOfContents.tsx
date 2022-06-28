@@ -1,11 +1,12 @@
 import * as React from "react";
-import { Link } from "react-router-dom";
 
+import Header from "./molecules/Header";
+import Link from "./molecules/Link";
 import { TEACHES } from "./teaches/teaches";
 
 const TableOfContents = () => (
   <>
-    <h1>Board Game Teach Notes</h1>
+    <Header>Board Game Teach Notes</Header>
     <ul>
       {TEACHES.map((teach) => (
         <li key={teach.teachId}>

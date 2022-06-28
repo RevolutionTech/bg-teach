@@ -2,8 +2,7 @@ import * as React from "react";
 import { createRoot } from "react-dom/client";
 
 import App from "./App";
-// Just use user agent CSS for now
-// import "./styles.css";
+import "./styles.css";
 
 const container = document.getElementById("app");
 const root = createRoot(container!);
