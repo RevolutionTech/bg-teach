@@ -1,4 +1,4 @@
-# Tzolk'in
+# Tzolk'in: The Mayan Calendar
 
 - [ ] Theme & vibe
 - [ ] Placing and removing workers, each turn gears rotate
