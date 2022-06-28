@@ -1,5 +1,7 @@
 # Dead of Winter: A Crossroads Game
 
+### Overview
+
 - [ ] Theme & vibe
 - [ ] Semi-cooperative: main objective and secret objective
 - [ ] Possible traitor
@@ -9,6 +11,9 @@
   - [ ] Dice results determine possible actions
   - [ ] You will have 1 die per survivor plus 1 for yourself
   - [ ] You may get more survivors during the game, but they won't add a die until the following turn
+
+### Actions
+
 - [ ] Attack
   - [ ] Spend die >= survivor attack value
   - [ ] Target in same location
@@ -57,34 +62,46 @@
   - [ ] Choose a player to exile (can't be yourself)
   - [ ] All other players vote up/down
   - [ ] More on exiling later, but it's a tough life
+
+### Crossroads
+
 - [ ] Crossroad cards: trigger text is in italics
-- Resolve colony
-  - [ ] Pay 1 food for every 2 survivors in the colony (rounded up)
-    - [ ] If not enough food, add starvation token to lose 1 morale for each starvation token in food supply (but keep all food)
-  - [ ] Check waste: lose 1 morale for every set of 10 cards
-  - [ ] Resolve crisis: +1 for correct symbol, -1 for wrong symbol, need result = non-exiled players
-    - [ ] Get 1 morale for 2+ extra symbols
-  - [ ] Add zombies: 1 at colony for every 2 survivors at colony (starting at entrance 1), 1 at other locations for every survivor there
-    - [ ] For each noise token, add a zombie for each roll of 3 or less
-    - [ ] Barricades cancel zombie spawn if no empty entrances
-    - [ ] When entrance is overrun, kill lowest influence (helpless survivor if no one else there)
-  - [ ] Check main objective
-  - [ ] Move round marker
-  - [ ] Pass first player token counter-clockwise (regressive turn order)
-- First player
-  - [ ] Breaks all ties
-  - [ ] Decides what order to resolve effects that occur simultaneously
-- Exiled players
-  - [ ] Draw an exile secret objective card (this makes your objective harder)
-  - [ ] Move all survivors to non-colony locations
-  - [ ] Can never move to colony
-  - [ ] Adds new survivors to a non-colony location of their choice
-  - [ ] Does not add helpless survivors when instructed
-  - [ ] Cannot vote
-  - [ ] Cannot add cards to a crisis
-  - [ ] Cannot spend food tokens, but may use food cards from hand to spend them
-  - [ ] Does not discard cards to the waste pile
-  - [ ] When exiled survivors die, no morale is lost
-  - [ ] If 2 non-traitor players are exiled, morale drops to 0
-- [ ] Setup: keep 2 survivors, 1 as leader
+
+### Resolve colony
+
+- [ ] Pay 1 food for every 2 survivors in the colony (rounded up)
+  - [ ] If not enough food, add starvation token to lose 1 morale for each starvation token in food supply (but keep all food)
+- [ ] Check waste: lose 1 morale for every set of 10 cards
+- [ ] Resolve crisis: +1 for correct symbol, -1 for wrong symbol, need result = non-exiled players
+  - [ ] Get 1 morale for 2+ extra symbols
+- [ ] Add zombies: 1 at colony for every 2 survivors at colony (starting at entrance 1), 1 at other locations for every survivor there
+  - [ ] For each noise token, add a zombie for each roll of 3 or less
+  - [ ] Barricades cancel zombie spawn if no empty entrances
+  - [ ] When entrance is overrun, kill lowest influence (helpless survivor if no one else there)
+- [ ] Check main objective
+- [ ] Move round marker
+- [ ] Pass first player token counter-clockwise (regressive turn order)
+
+### First player
+
+- [ ] Breaks all ties
+- [ ] Decides what order to resolve effects that occur simultaneously
+
+### Exiled players
+
+- [ ] Draw an exile secret objective card (this makes your objective harder)
+- [ ] Move all survivors to non-colony locations
+- [ ] Can never move to colony
+- [ ] Adds new survivors to a non-colony location of their choice
+- [ ] Does not add helpless survivors when instructed
+- [ ] Cannot vote
+- [ ] Cannot add cards to a crisis
+- [ ] Cannot spend food tokens, but may use food cards from hand to spend them
+- [ ] Does not discard cards to the waste pile
+- [ ] When exiled survivors die, no morale is lost
+- [ ] If 2 non-traitor players are exiled, morale drops to 0
+
+### Setup
+
+- [ ] Keep 2 survivors, 1 as leader
   - [ ] Leader with the highest influence determines first player
