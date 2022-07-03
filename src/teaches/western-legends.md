@@ -12,6 +12,7 @@
 ### Poker cards
 
 - [ ] Used directly for effects, used in fights, and playing poker
+- [ ] 2 < 3 < ... < 10 < J < Q < K < A
 - [ ] Each card has action, reaction, or bonus
 
 ### Marshal / Wanted points
@@ -20,6 +21,7 @@
 - [ ] Marshal players may forfeit all MPs and become Wanted
 - [ ] Wanted players must be arrested and lose all WP before gaining MP
 - [ ] Players gain bonuses when entering certain spaces of the track
+- [ ] Advancing beyond the 9th space earns LP
 - [ ] Wanted players earn LP every turn
 - [ ] Players on tracks earn LP at the end of the game
 
@@ -32,7 +34,7 @@
 - [ ] Fight
   - [ ] Target must be in the same space
   - [ ] Declare Arrest, Duel, or Rob (different rewards)
-  - [ ] To Arrest, active player must have 1+ Marshal points, target must have 1+ Wanted points
+    - [ ] Arrests can only be performed by Marshals to Wanted players
   - [ ] Active player chooses 1 poker card facedown
   - [ ] Targeted player may decline, active player immediately wins
   - [ ] If target fights, they choose 1 poker card facedown
@@ -57,9 +59,9 @@
   - [ ] Ranch: acquire cattle
     - [ ] Take 1 cattle token of matching colour
     - [ ] Can look at reward anytime
-    - [ ] Wrangle: drop off cattle at a rail station to gain 1 MP
-    - [ ] Rustle: drop off cattle at opposing ranch to gain 1 WP
-    - [ ] Either way, take cattle reward
+    - [ ] Wrangle (not an action): drop off cattle at a rail station to gain 1 MP
+    - [ ] Rustle (not an action): drop off cattle at opposing ranch to gain 1 WP
+    - [ ] Either way, take cattle reward and shuffle into appropriate stack
   - [ ] General Store: purchase/upgrade
     - [ ] Exchange $ for any number of items, as long as you can afford it
     - [ ] When purchasing, can immediately equip
@@ -69,11 +71,11 @@
   - [ ] Bank: deposit
     - [ ] Gain $20 and 1 LP per gold nugget deposited
   - [ ] Bank: heist
-    - [ ] Fight bank guard
+    - [ ] Fight bank guard NPC
     - [ ] Max once per turn
   - [ ] Doctor's office: heal
     - [ ] Spend $10 to remove all wounds
-    - [ ] Take 1 poker card per wound lost
+    - [ ] Draw 1 poker card per wound lost
   - [ ] Any location: work for $10
 
 ### Fighting NPCs
@@ -91,7 +93,8 @@
 
 ### Story cards
 
-- [ ] Achieve objective to contribute (max once per turn)
+- [ ] Achieve objective to contribute (max one disc per turn)
+  - [ ] Can only contribute on your turn
 - [ ] When triggered: contributing players get rewards (max once)
 - [ ] Bandits spawn in empty spaces avail
 - [ ] Sometimes triggering player can move sheriff
@@ -118,14 +121,14 @@
 
 ### Tableau limitations
 
+- [ ] Players may never own duplicate items
+- [ ] Max 3 misc items, $120, 4 gold nuggets, 1 cattle token
 - [ ] Max 3 wounds, additional have no effect
-- [ ] Inventory limited to 3 misc items
-- [ ] Players may never own duplicates
-- [ ] Max money limit of $120
 
 ### Characters
 
 - [ ] Starting location, bonuses, and legendary ability
+  - [ ] Legendary ability becomes active when player reaches 5 LP
 - [ ] Choose 1 of 2
 - [ ] Most Wanted is first player (fixed turn order)
 - [ ] Wanted players should sit next to each other
