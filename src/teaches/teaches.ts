@@ -3,6 +3,7 @@ import { keyBy, sortBy } from "lodash";
 import CosmicEncounter from "url:./cosmic-encounter.md";
 import DeadOfWinter from "url:./dead-of-winter.md";
 import Mariposas from "url:./mariposas.md";
+import NyctophobiaVampire from "url:./nyctophobia-vampire.md";
 import ShadowsOverCamelot from "url:./shadows-over-camelot.md";
 import TragedyLooper from "url:./tragedy-looper.md";
 import Tzolkin from "url:./tzolkin.md";
@@ -30,6 +31,11 @@ export const TEACHES: TeachInfo[] = sortBy(
       teachId: "mariposas",
       title: "Mariposas",
       notes: Mariposas,
+    },
+    {
+      teachId: "nyctophobia-vampire",
+      title: "Nyctophobia: Vampire Encounter",
+      notes: NyctophobiaVampire,
     },
     {
       teachId: "shadows-over-camelot",
