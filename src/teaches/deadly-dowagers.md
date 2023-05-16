@@ -35,10 +35,10 @@
 - [ ] You may play a Cause of Death or Remarry card
   - [ ] Cause of Death: increase infamy to kill husband
 - [ ] Then, you may play one other husband phase action: strangle, elope, or promote
-  - [ ] Intuitively you can either kill or marry on your turn, but if you're greedy you can kill then elope or remarry then strangle to do both on the same turn
   - [ ] Strangle: increase infamy by 7 to kill husband
   - [ ] Elope: increase infamy by 5 to remarry
   - [ ] Promote: pay 3/5 crowns to advance
+  - [ ] Intuitively you can either kill or marry on your turn, but if you're greedy you can kill then elope or remarry then strangle to do both on the same turn
 
 ### Miscellaneous
 
