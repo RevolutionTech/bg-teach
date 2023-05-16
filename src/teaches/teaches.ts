@@ -2,6 +2,7 @@ import { keyBy, sortBy } from "lodash";
 
 import CosmicEncounter from "url:./cosmic-encounter.md";
 import DeadOfWinter from "url:./dead-of-winter.md";
+import DeadlyDowagers from "url:./deadly-dowagers.md";
 import Mariposas from "url:./mariposas.md";
 import NyctophobiaVampire from "url:./nyctophobia-vampire.md";
 import ShadowsOverCamelot from "url:./shadows-over-camelot.md";
@@ -26,6 +27,11 @@ export const TEACHES: TeachInfo[] = sortBy(
       teachId: "dead-of-winter",
       title: "Dead of Winter: A Crossroads Game",
       notes: DeadOfWinter,
+    },
+    {
+      teachId: "deadly-dowagers",
+      title: "Deadly Dowagers",
+      notes: DeadlyDowagers,
     },
     {
       teachId: "mariposas",
