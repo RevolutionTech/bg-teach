@@ -1,5 +1,6 @@
 import { keyBy, sortBy } from "lodash";
 
+import Calico from "url:./calico.md";
 import CosmicEncounter from "url:./cosmic-encounter.md";
 import DeadOfWinter from "url:./dead-of-winter.md";
 import DeadlyDowagers from "url:./deadly-dowagers.md";
@@ -18,6 +19,11 @@ export interface TeachInfo {
 
 export const TEACHES: TeachInfo[] = sortBy(
   [
+    {
+      teachId: "calico",
+      title: "Calico",
+      notes: Calico,
+    },
     {
       teachId: "cosmic-encounter",
       title: "Cosmic Encounter",
