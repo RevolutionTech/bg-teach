@@ -4,6 +4,7 @@ import Calico from "url:./calico.md";
 import CosmicEncounter from "url:./cosmic-encounter.md";
 import DeadOfWinter from "url:./dead-of-winter.md";
 import DeadlyDowagers from "url:./deadly-dowagers.md";
+import Downforce from "url:./downforce.md";
 import Mariposas from "url:./mariposas.md";
 import NyctophobiaVampire from "url:./nyctophobia-vampire.md";
 import ShadowsOverCamelot from "url:./shadows-over-camelot.md";
@@ -38,6 +39,11 @@ export const TEACHES: TeachInfo[] = sortBy(
       teachId: "deadly-dowagers",
       title: "Deadly Dowagers",
       notes: DeadlyDowagers,
+    },
+    {
+      teachId: "downforce",
+      title: "Downforce",
+      notes: Downforce,
     },
     {
       teachId: "mariposas",
