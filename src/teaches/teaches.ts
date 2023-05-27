@@ -9,6 +9,7 @@ import Mariposas from "url:./mariposas.md";
 import NyctophobiaVampire from "url:./nyctophobia-vampire.md";
 import ShadowsOverCamelot from "url:./shadows-over-camelot.md";
 import TragedyLooper from "url:./tragedy-looper.md";
+import TuringMachine from "url:./turing-machine.md";
 import Tzolkin from "url:./tzolkin.md";
 import WesternLegends from "url:./western-legends.md";
 
@@ -64,6 +65,11 @@ export const TEACHES: TeachInfo[] = sortBy(
       teachId: "tragedy-looper",
       title: "Tragedy Looper",
       notes: TragedyLooper,
+    },
+    {
+      teachId: "turing-machine",
+      title: "Turing Machine",
+      notes: TuringMachine,
     },
     {
       teachId: "tzolkin",
