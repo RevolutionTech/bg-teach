@@ -10,7 +10,7 @@
 ### Round
 
 - [ ] Overview: make proposal, question verifiers, possibly guess secret code
-- [ ] Make proposal: choose a 3-digit code, write down, take corresponding cards
+- [ ] Make proposal: choose a 3-digit code, write down, take corresponding punch cards
 - [ ] Question 1-3 verifiers
   - [ ] Choose a verifier
   - [ ] Compare your proposal to the verifier to determine the criterion
