@@ -6,6 +6,7 @@ import CosmicEncounter from "url:./cosmic-encounter.md";
 import DeadOfWinter from "url:./dead-of-winter.md";
 import DeadlyDowagers from "url:./deadly-dowagers.md";
 import Downforce from "url:./downforce.md";
+import LostRuinsOfArnak from "url:./lost-ruins-of-arnak.md";
 import Mariposas from "url:./mariposas.md";
 import NyctophobiaVampire from "url:./nyctophobia-vampire.md";
 import ShadowsOverCamelot from "url:./shadows-over-camelot.md";
@@ -51,6 +52,11 @@ export const TEACHES: TeachInfo[] = sortBy(
       teachId: "downforce",
       title: "Downforce",
       notes: Downforce,
+    },
+    {
+      teachId: "lost-ruins-of-arnak",
+      title: "Lost Ruins of Arnak",
+      notes: LostRuinsOfArnak,
     },
     {
       teachId: "mariposas",
