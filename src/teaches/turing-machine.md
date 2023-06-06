@@ -23,7 +23,12 @@
 - [ ] Simultaneously reveal if guessing code
   - [ ] Guessers check the answer: game ends if correct, player eliminated if incorrect
 
+### Making Inferences
+
+- [ ] The valid criteria will identify exactly 1 code
+- [ ] No verifier is superfluous
+- [ ] Every verifier passes for 1 of the given criteria
+
 ### Miscellaneous
 
-- [ ] No verifier is superfluous
 - [ ] Tiebreaker: fewest questions
