@@ -45,7 +45,7 @@
 
 ### Surfacing
 
-- [ ] Captain announces "SURFACE" and starts erasing the route on her sheet
+- [ ] Captain announces she is surfacing (eg. "SURFACE IN SECTOR 4") and starts erasing the route on her sheet
   - [ ] The Captain maintains the current position and position of mines
 - [ ] Each crew member draws a line around one of the sections of the submarine and initialing it, starting with the Engineer
   - [ ] Once complete, the enemy Engineer must validate
@@ -55,7 +55,7 @@
 ### Systems
 
 - [ ] The Captain can activate any system, the First Mate can activate the Drone + Sonar systems
-- [ ] Before activating. check with the Engineer that no breakdowns are affecting the system
+- [ ] Before activating, check with the Engineer that no breakdowns are affecting the system
 - [ ] To activate, first announce "STOP" and all play pauses
 - [ ] Torpedo: launches 1-4 spaces away (no diagonals) and announces location (eg. "TORPEDO LAUNCHED IN C6")
 - [ ] Dropping mine: Captain draws M on adjacent space and announces "MINE DROPPED"
