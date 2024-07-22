@@ -8,6 +8,7 @@ import DeadOfWinter from "url:./dead-of-winter.md";
 import DeadlyDowagers from "url:./deadly-dowagers.md";
 import Downforce from "url:./downforce.md";
 import ForgottenWaters from "url:./forgotten-waters.md";
+import GalaxyTrucker from "url:./galaxy-trucker.md";
 import LostRuinsOfArnak from "url:./lost-ruins-of-arnak.md";
 import Mariposas from "url:./mariposas.md";
 import NyctophobiaVampire from "url:./nyctophobia-vampire.md";
@@ -64,6 +65,11 @@ export const TEACHES: TeachInfo[] = sortBy(
       teachId: "forgotten-waters",
       title: "Forgotten Waters",
       notes: ForgottenWaters,
+    },
+    {
+      teachId: "galaxy-trucker",
+      title: "Galaxy Trucker",
+      notes: GalaxyTrucker,
     },
     {
       teachId: "lost-ruins-of-arnak",
