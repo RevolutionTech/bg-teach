@@ -10,6 +10,7 @@ import Downforce from "url:./downforce.md";
 import ForgottenWaters from "url:./forgotten-waters.md";
 import GalaxyTrucker from "url:./galaxy-trucker.md";
 import LostRuinsOfArnak from "url:./lost-ruins-of-arnak.md";
+import ManhattanProject from "url:./manhattan-project.md";
 import Mariposas from "url:./mariposas.md";
 import NyctophobiaVampire from "url:./nyctophobia-vampire.md";
 import ShadowsOverCamelot from "url:./shadows-over-camelot.md";
@@ -75,6 +76,11 @@ export const TEACHES: TeachInfo[] = sortBy(
       teachId: "lost-ruins-of-arnak",
       title: "Lost Ruins of Arnak",
       notes: LostRuinsOfArnak,
+    },
+    {
+      teachId: "manhattan-project",
+      title: "Manhattan Project",
+      notes: ManhattanProject,
     },
     {
       teachId: "mariposas",

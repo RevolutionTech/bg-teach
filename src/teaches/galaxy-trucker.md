@@ -35,6 +35,7 @@
 - [ ] Double Engines/Cannons: work like single counterparts but have twice as much power and require batteries to be operated
 - [ ] Battery components: +2-3 batteries
 - [ ] Shields: Deflects small meteors and small enemy fire on two sides
+  - [ ] Requires batteries
   - [ ] Location doesn't matter, but orientation does
 - [ ] Cargo Holds: +2-3 containers for cargo
   - [ ] Red (radioactive) cargo can only be stored in Special Cargo Holds
