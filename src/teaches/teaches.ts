@@ -13,6 +13,7 @@ import LostRuinsOfArnak from "url:./lost-ruins-of-arnak.md";
 import ManhattanProject from "url:./manhattan-project.md";
 import Mariposas from "url:./mariposas.md";
 import NyctophobiaVampire from "url:./nyctophobia-vampire.md";
+import Sandbag from "url:./sandbag.md";
 import ShadowsOverCamelot from "url:./shadows-over-camelot.md";
 import TragedyLooper from "url:./tragedy-looper.md";
 import TuringMachine from "url:./turing-machine.md";
@@ -91,6 +92,11 @@ export const TEACHES: TeachInfo[] = sortBy(
       teachId: "nyctophobia-vampire",
       title: "Nyctophobia: Vampire Encounter",
       notes: NyctophobiaVampire,
+    },
+    {
+      teachId: "sandbag",
+      title: "Sandbag",
+      notes: Sandbag,
     },
     {
       teachId: "shadows-over-camelot",
