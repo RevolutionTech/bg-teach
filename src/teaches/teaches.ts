@@ -8,6 +8,7 @@ import DeadOfWinter from "url:./dead-of-winter.md";
 import DeadlyDowagers from "url:./deadly-dowagers.md";
 import Downforce from "url:./downforce.md";
 import ForgottenWaters from "url:./forgotten-waters.md";
+import Fromage from "url:./fromage.md";
 import GalaxyTrucker from "url:./galaxy-trucker.md";
 import LostRuinsOfArnak from "url:./lost-ruins-of-arnak.md";
 import ManhattanProject from "url:./manhattan-project.md";
@@ -67,6 +68,11 @@ export const TEACHES: TeachInfo[] = sortBy(
       teachId: "forgotten-waters",
       title: "Forgotten Waters",
       notes: ForgottenWaters,
+    },
+    {
+      teachId: "fromage",
+      title: "Fromage",
+      notes: Fromage,
     },
     {
       teachId: "galaxy-trucker",
