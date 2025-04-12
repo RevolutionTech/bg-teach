@@ -7,6 +7,7 @@ import CosmicEncounter from "url:./cosmic-encounter.md";
 import DeadOfWinter from "url:./dead-of-winter.md";
 import DeadlyDowagers from "url:./deadly-dowagers.md";
 import Downforce from "url:./downforce.md";
+import FalloutShelter from "url:./fallout-shelter.md";
 import ForgottenWaters from "url:./forgotten-waters.md";
 import Fromage from "url:./fromage.md";
 import GalaxyTrucker from "url:./galaxy-trucker.md";
@@ -63,6 +64,11 @@ export const TEACHES: TeachInfo[] = sortBy(
       teachId: "downforce",
       title: "Downforce",
       notes: Downforce,
+    },
+    {
+      teachId: "fallout-shelter",
+      title: "Fallout Shelter",
+      notes: FalloutShelter,
     },
     {
       teachId: "forgotten-waters",
