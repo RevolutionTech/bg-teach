@@ -9,6 +9,7 @@ import DeadOfWinter from "url:./dead-of-winter.md";
 import DeadlyDowagers from "url:./deadly-dowagers.md";
 import Downforce from "url:./downforce.md";
 import FalloutShelter from "url:./fallout-shelter.md";
+import ForbiddenIsland from "url:./forbidden-island.md";
 import ForgottenWaters from "url:./forgotten-waters.md";
 import Fromage from "url:./fromage.md";
 import GalaxyTrucker from "url:./galaxy-trucker.md";
@@ -77,6 +78,11 @@ export const TEACHES: TeachInfo[] = sortBy(
       teachId: "fallout-shelter",
       title: "Fallout Shelter",
       notes: FalloutShelter,
+    },
+    {
+      teachId: "forbidden-island",
+      title: "Forbidden Island",
+      notes: ForbiddenIsland,
     },
     {
       teachId: "forgotten-waters",
