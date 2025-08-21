@@ -12,6 +12,7 @@ import FalloutShelter from "url:./fallout-shelter.md";
 import ForgottenWaters from "url:./forgotten-waters.md";
 import Fromage from "url:./fromage.md";
 import GalaxyTrucker from "url:./galaxy-trucker.md";
+import LetterJam from "url:./letter-jam.md";
 import LostRuinsOfArnak from "url:./lost-ruins-of-arnak.md";
 import ManhattanProject from "url:./manhattan-project.md";
 import Mariposas from "url:./mariposas.md";
@@ -91,6 +92,11 @@ export const TEACHES: TeachInfo[] = sortBy(
       teachId: "galaxy-trucker",
       title: "Galaxy Trucker",
       notes: GalaxyTrucker,
+    },
+    {
+      teachId: "letter-jam",
+      title: "Letter Jam",
+      notes: LetterJam,
     },
     {
       teachId: "lost-ruins-of-arnak",
