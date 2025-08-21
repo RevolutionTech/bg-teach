@@ -9,7 +9,7 @@
 
 ### Race
 
-- [ ] Play a card, move cars top to bottom
+- [ ] Play a card, move cars top to bottom (no redraw)
 - [ ] Movement: forward or diagonal, not sideways or backwards
   - [ ] Cars can become blocked, even intentionally
 - [ ] White is wild (any color not elsewhere on the card)
