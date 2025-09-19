@@ -8,6 +8,7 @@ import CritterKitchen from "url:./critter-kitchen.md";
 import DeadOfWinter from "url:./dead-of-winter.md";
 import DeadlyDowagers from "url:./deadly-dowagers.md";
 import Downforce from "url:./downforce.md";
+import DraculasFeast from "url:./draculas-feast.md";
 import FalloutShelter from "url:./fallout-shelter.md";
 import ForbiddenIsland from "url:./forbidden-island.md";
 import ForgottenWaters from "url:./forgotten-waters.md";
@@ -75,6 +76,11 @@ export const TEACHES: TeachInfo[] = sortBy(
       teachId: "downforce",
       title: "Downforce",
       notes: Downforce,
+    },
+    {
+      teachId: "draculas-feast",
+      title: "Dracula's Feast",
+      notes: DraculasFeast,
     },
     {
       teachId: "fallout-shelter",
