@@ -5,6 +5,7 @@ import CaptainSonar from "url:./captain-sonar.md";
 import CastlesOfBurgundy from "url:./castles-of-burgundy.md";
 import CosmicEncounter from "url:./cosmic-encounter.md";
 import CritterKitchen from "url:./critter-kitchen.md";
+import Cryptid from "url:./cryptid.md";
 import DeadOfWinter from "url:./dead-of-winter.md";
 import DeadlyDowagers from "url:./deadly-dowagers.md";
 import Downforce from "url:./downforce.md";
@@ -61,6 +62,11 @@ export const TEACHES: TeachInfo[] = sortBy(
       teachId: "critter-kitchen",
       title: "Critter Kitchen",
       notes: CritterKitchen,
+    },
+    {
+      teachId: "cryptid",
+      title: "Cryptid",
+      notes: Cryptid,
     },
     {
       teachId: "dead-of-winter",
