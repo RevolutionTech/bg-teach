@@ -8,6 +8,7 @@ import CritterKitchen from "url:./critter-kitchen.md";
 import Cryptid from "url:./cryptid.md";
 import DeadOfWinter from "url:./dead-of-winter.md";
 import DeadlyDowagers from "url:./deadly-dowagers.md";
+import DevilsDice from "url:./devils-dice.md";
 import Downforce from "url:./downforce.md";
 import DraculasFeast from "url:./draculas-feast.md";
 import FalloutShelter from "url:./fallout-shelter.md";
@@ -77,6 +78,11 @@ export const TEACHES: TeachInfo[] = sortBy(
       teachId: "deadly-dowagers",
       title: "Deadly Dowagers",
       notes: DeadlyDowagers,
+    },
+    {
+      teachId: "devils-dice",
+      title: "Devil's Dice",
+      notes: DevilsDice,
     },
     {
       teachId: "downforce",
