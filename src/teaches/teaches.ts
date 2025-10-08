@@ -20,6 +20,7 @@ import LetterJam from "url:./letter-jam.md";
 import LostRuinsOfArnak from "url:./lost-ruins-of-arnak.md";
 import ManhattanProject from "url:./manhattan-project.md";
 import Mariposas from "url:./mariposas.md";
+import MarvelChampions from "url:./marvel-champions.md";
 import NyctophobiaVampire from "url:./nyctophobia-vampire.md";
 import SanJuan from "url:./san-juan.md";
 import Sandbag from "url:./sandbag.md";
@@ -139,6 +140,11 @@ export const TEACHES: TeachInfo[] = sortBy(
       teachId: "mariposas",
       title: "Mariposas",
       notes: Mariposas,
+    },
+    {
+      teachId: "marvel-champions",
+      title: "Marvel Champions",
+      notes: MarvelChampions,
     },
     {
       teachId: "nyctophobia-vampire",
