@@ -11,6 +11,7 @@ import DeadlyDowagers from "url:./deadly-dowagers.md";
 import DevilsDice from "url:./devils-dice.md";
 import Downforce from "url:./downforce.md";
 import DraculasFeast from "url:./draculas-feast.md";
+import DreadfulMeadows from "url:./dreadful-meadows.md";
 import FalloutShelter from "url:./fallout-shelter.md";
 import ForbiddenIsland from "url:./forbidden-island.md";
 import ForgottenWaters from "url:./forgotten-waters.md";
@@ -96,6 +97,11 @@ export const TEACHES: TeachInfo[] = sortBy(
       teachId: "draculas-feast",
       title: "Dracula's Feast",
       notes: DraculasFeast,
+    },
+    {
+      teachId: "dreadful-meadows",
+      title: "Dreadful Meadows",
+      notes: DreadfulMeadows,
     },
     {
       teachId: "fallout-shelter",
