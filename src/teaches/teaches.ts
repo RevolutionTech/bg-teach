@@ -34,6 +34,7 @@ import TeaWitches from "url:./tea-witches.md";
 import TragedyLooper from "url:./tragedy-looper.md";
 import TuringMachine from "url:./turing-machine.md";
 import Tzolkin from "url:./tzolkin.md";
+import Vagrantsong from "url:./vagrantsong.md";
 import WesternLegends from "url:./western-legends.md";
 
 export interface TeachInfo {
@@ -213,6 +214,11 @@ export const TEACHES: TeachInfo[] = sortBy(
       teachId: "tzolkin",
       title: "Tzolk'in: The Mayan Calendar",
       notes: Tzolkin,
+    },
+    {
+      teachId: "vagrantsong",
+      title: "Vagrantsong",
+      notes: Vagrantsong,
     },
     {
       teachId: "western-legends",
