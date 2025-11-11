@@ -6,6 +6,7 @@ import CastlesOfBurgundy from "url:./castles-of-burgundy.md";
 import CosmicEncounter from "url:./cosmic-encounter.md";
 import CritterKitchen from "url:./critter-kitchen.md";
 import Cryptid from "url:./cryptid.md";
+import ColtExpress from "url:./colt-express.md";
 import DeadOfWinter from "url:./dead-of-winter.md";
 import DeadlyDowagers from "url:./deadly-dowagers.md";
 import DevilsDice from "url:./devils-dice.md";
@@ -74,6 +75,11 @@ export const TEACHES: TeachInfo[] = sortBy(
       teachId: "cryptid",
       title: "Cryptid",
       notes: Cryptid,
+    },
+    {
+      teachId: "colt-express",
+      title: "Colt Express",
+      notes: ColtExpress,
     },
     {
       teachId: "dead-of-winter",
