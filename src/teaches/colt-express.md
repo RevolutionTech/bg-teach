@@ -4,6 +4,7 @@
 
 - [ ] Theme & vibe
 - [ ] Objective: most money
+  - [ ] Most shots: $1000
 - [ ] Game end: 5 rounds
 - [ ] Round overview: play cards, resolve cards
 
@@ -23,6 +24,7 @@
 - [ ] Marshal: adjacent car, always inside
   - [ ] Bandits cannot be in the same car as the Marshal, they take a bullet and escape to the roof
 - [ ] Fire: bandit in adjacent car (if inside) or anyone in LOS (if on roof)
+  - [ ] If valid target, give that player your next bullet
   - [ ] Can never shoot at someone in the same car
 - [ ] Robbery: take a loot token
 - [ ] Punch: target a bandit in same car, they drop a loot token and move to an adjacent car
