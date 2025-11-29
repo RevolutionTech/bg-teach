@@ -27,6 +27,7 @@ import Mariposas from "url:./mariposas.md";
 import MarvelChampions from "url:./marvel-champions.md";
 import NyctophobiaVampire from "url:./nyctophobia-vampire.md";
 import PhantomInkArcana from "url:./phantom-ink-arcana.md";
+import Pollen from "url:./pollen.md";
 import SanJuan from "url:./san-juan.md";
 import Sandbag from "url:./sandbag.md";
 import ShadowsOverCamelot from "url:./shadows-over-camelot.md";
@@ -181,6 +182,11 @@ export const TEACHES: TeachInfo[] = sortBy(
       teachId: "phantom-ink-arcana",
       title: "Phantom Ink: Arcana",
       notes: PhantomInkArcana,
+    },
+    {
+      teachId: "pollen",
+      title: "Pollen",
+      notes: Pollen,
     },
     {
       teachId: "san-juan",
