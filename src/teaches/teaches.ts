@@ -19,6 +19,7 @@ import ForgottenWaters from "url:./forgotten-waters.md";
 import Fromage from "url:./fromage.md";
 import GalaxyTrucker from "url:./galaxy-trucker.md";
 import GirlsVsGhouls from "url:./girls-vs-ghouls.md";
+import HoneyBuzz from "url:./honey-buzz.md";
 import LetterJam from "url:./letter-jam.md";
 import LostRuinsOfArnak from "url:./lost-ruins-of-arnak.md";
 import ManhattanProject from "url:./manhattan-project.md";
@@ -140,6 +141,11 @@ export const TEACHES: TeachInfo[] = sortBy(
       teachId: "girls-vs-ghouls",
       title: "Girls vs Ghouls",
       notes: GirlsVsGhouls,
+    },
+    {
+      teachId: "honey-buzz",
+      title: "Honey Buzz",
+      notes: HoneyBuzz,
     },
     {
       teachId: "letter-jam",
