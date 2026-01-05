@@ -16,6 +16,7 @@ import DreadfulMeadows from "url:./dreadful-meadows.md";
 import FalloutShelter from "url:./fallout-shelter.md";
 import ForbiddenIsland from "url:./forbidden-island.md";
 import ForgottenWaters from "url:./forgotten-waters.md";
+import FormulaD from "url:./formula-d.md";
 import Fromage from "url:./fromage.md";
 import GalaxyTrucker from "url:./galaxy-trucker.md";
 import GirlsVsGhouls from "url:./girls-vs-ghouls.md";
@@ -127,6 +128,11 @@ export const TEACHES: TeachInfo[] = sortBy(
       teachId: "forgotten-waters",
       title: "Forgotten Waters",
       notes: ForgottenWaters,
+    },
+    {
+      teachId: "formula-d",
+      title: "Formula D",
+      notes: FormulaD,
     },
     {
       teachId: "fromage",
