@@ -27,6 +27,7 @@ import ManhattanProject from "url:./manhattan-project.md";
 import Mariposas from "url:./mariposas.md";
 import MarvelChampions from "url:./marvel-champions.md";
 import NyctophobiaVampire from "url:./nyctophobia-vampire.md";
+import OffWithTheirHeads from "url:./off-with-their-heads.md";
 import PhantomInkArcana from "url:./phantom-ink-arcana.md";
 import Pollen from "url:./pollen.md";
 import SanJuan from "url:./san-juan.md";
@@ -183,6 +184,11 @@ export const TEACHES: TeachInfo[] = sortBy(
       teachId: "nyctophobia-vampire",
       title: "Nyctophobia: Vampire Encounter",
       notes: NyctophobiaVampire,
+    },
+    {
+      teachId: "off-with-their-heads",
+      title: "Off With Their Heads!",
+      notes: OffWithTheirHeads,
     },
     {
       teachId: "phantom-ink-arcana",
