@@ -12,6 +12,8 @@
 - [ ] 3 zones: Meadow (High), Woods (Mid), and Keep (Low)
 - [ ] Card ranking (suit, rank) determines which zone
   - [ ] 10 < J < Q < K < A
+  - [ ] Queen of Hearts rotates to the next suit every turn
+  - [ ] When marking, J=Q=K=10, A=1/11
 - [ ] Meadow: choose mushroom matching color, mark leftmost available space
   - [ ] At game end, only complete mushrooms score
   - [ ] Center mushroom allows either color
@@ -20,6 +22,7 @@
   - [ ] 4 trees allow either color
 - [ ] Keep: mark space matching color (must be at start or adjacent to a marked space)
   - [ ] At game end, score marked spaces with laurels
+  - [ ] Red Keep: mark any number/color in Meadow and any number/color in Woods
 
 ### Bonuses
 
