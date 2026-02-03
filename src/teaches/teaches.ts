@@ -22,6 +22,7 @@ import GalaxyTrucker from "url:./galaxy-trucker.md";
 import GirlsVsGhouls from "url:./girls-vs-ghouls.md";
 import HoneyBuzz from "url:./honey-buzz.md";
 import LetterJam from "url:./letter-jam.md";
+import LibertaliaWindsOfGalecrest from "url:./libertalia-winds-of-galecrest.md";
 import LostRuinsOfArnak from "url:./lost-ruins-of-arnak.md";
 import ManhattanProject from "url:./manhattan-project.md";
 import Mariposas from "url:./mariposas.md";
@@ -159,6 +160,11 @@ export const TEACHES: TeachInfo[] = sortBy(
       teachId: "letter-jam",
       title: "Letter Jam",
       notes: LetterJam,
+    },
+    {
+      teachId: "liberalia-winds-of-galecrest",
+      title: "Libertalia: Winds of Galecrest",
+      notes: LitertaliaWindsOfGalecrest,
     },
     {
       teachId: "lost-ruins-of-arnak",
