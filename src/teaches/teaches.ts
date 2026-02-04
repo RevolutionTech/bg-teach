@@ -164,7 +164,7 @@ export const TEACHES: TeachInfo[] = sortBy(
     {
       teachId: "liberalia-winds-of-galecrest",
       title: "Libertalia: Winds of Galecrest",
-      notes: LitertaliaWindsOfGalecrest,
+      notes: LibertaliaWindsOfGalecrest,
     },
     {
       teachId: "lost-ruins-of-arnak",
