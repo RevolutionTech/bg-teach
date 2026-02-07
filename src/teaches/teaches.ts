@@ -20,6 +20,7 @@ import FormulaD from "url:./formula-d.md";
 import Fromage from "url:./fromage.md";
 import GalaxyTrucker from "url:./galaxy-trucker.md";
 import GirlsVsGhouls from "url:./girls-vs-ghouls.md";
+import Hearts from "url:./hearts.md";
 import HoneyBuzz from "url:./honey-buzz.md";
 import LetterJam from "url:./letter-jam.md";
 import LibertaliaWindsOfGalecrest from "url:./libertalia-winds-of-galecrest.md";
@@ -150,6 +151,11 @@ export const TEACHES: TeachInfo[] = sortBy(
       teachId: "girls-vs-ghouls",
       title: "Girls vs Ghouls",
       notes: GirlsVsGhouls,
+    },
+    {
+      teachId: "hearts",
+      title: "Hearts",
+      notes: Hearts,
     },
     {
       teachId: "honey-buzz",
