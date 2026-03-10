@@ -3,6 +3,7 @@ import { keyBy, sortBy } from "lodash";
 import Calico from "url:./calico.md";
 import CaptainSonar from "url:./captain-sonar.md";
 import CastlesOfBurgundy from "url:./castles-of-burgundy.md";
+import ClankInSpace from "url:./clank-in-space.md";
 import CosmicEncounter from "url:./cosmic-encounter.md";
 import CritterKitchen from "url:./critter-kitchen.md";
 import Cryptid from "url:./cryptid.md";
@@ -66,6 +67,11 @@ export const TEACHES: TeachInfo[] = sortBy(
       teachId: "castles-of-burgundy",
       title: "Castles of Burgundy",
       notes: CastlesOfBurgundy,
+    },
+    {
+      teachId: "clank-in-space",
+      title: "Clank! In! Space!",
+      notes: ClankInSpace,
     },
     {
       teachId: "cosmic-encounter",
@@ -268,6 +274,6 @@ export const TEACHES: TeachInfo[] = sortBy(
       notes: WesternLegends,
     },
   ],
-  "title"
+  "title",
 );
 export const TEACH_BY_ID = keyBy(TEACHES, "teachId");
