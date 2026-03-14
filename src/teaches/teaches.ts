@@ -18,6 +18,7 @@ import FalloutShelter from "url:./fallout-shelter.md";
 import ForbiddenIsland from "url:./forbidden-island.md";
 import ForgottenWaters from "url:./forgotten-waters.md";
 import FormulaD from "url:./formula-d.md";
+import FrenchToast from "url:./french-toast.md";
 import Fromage from "url:./fromage.md";
 import GalaxyTrucker from "url:./galaxy-trucker.md";
 import GirlsVsGhouls from "url:./girls-vs-ghouls.md";
@@ -127,6 +128,11 @@ export const TEACHES: TeachInfo[] = sortBy(
       teachId: "fallout-shelter",
       title: "Fallout Shelter",
       notes: FalloutShelter,
+    },
+    {
+      teachId: "french-toast",
+      title: "French Toast",
+      notes: FrenchToast,
     },
     {
       teachId: "forbidden-island",
