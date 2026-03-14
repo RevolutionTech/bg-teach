@@ -73,8 +73,3 @@
 ### Miscellaneous
 
 - [ ] Exiling cards: from hand or play area
-
-### Setup
-
-- [ ] Shuffle player deck, place face down on player board, draw 5 cards
-- [ ] Starting player: most recently traveled somewhere new

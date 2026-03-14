@@ -23,10 +23,12 @@
 ### Movement & Board
 
 - [ ] Movement: 1 Boot per border crossed
+- [ ] Footprint Borders: requires extra Boot
 - [ ] Locked Borders: requires a Master Key (from Market)
 - [ ] Enemy Borders: crossing a border with a monster costs 1 Health per icon (or spend 1 Sword per icon to ignore)
-- [ ] Telepads: move to any other Telepad (requires TelePass market item), depletes Boots that turn
-- [ ] Hyperlifts: move to any adjacent Hyperlift station, depletes Boots that turn
+- [ ] Telepads: move to any other Telepad (requires TelePass market item), depletes Boots
+- [ ] Hyperlifts: move to any adjacent Hyperlift station, depletes Boots
+- [ ] Security Checkpoint: depletes Boots
 - [ ] Terminals: place a Data Cube
   - [ ] Must hack 2 Terminals in different modules to enter the Command Center
 - [ ] Market: spend 7 Credits to buy: Master Key, TelePass, Med Kit (immediately heal 2), or Contraband (required for some card effects)
@@ -62,11 +64,11 @@
 - [ ] Artifact value
 - [ ] Points on cards in deck
 - [ ] Acquired tokens
+- [ ] Leftover credits
 - [ ] 20 Point bonus if you escaped (reached Cargo Bay)
 - [ ] 0 Points if you die in the "Red" (Command Center/Modules)
 - [ ] Tiebreaker: most valuable Artifact
 
 ### Miscellaneous
 
-- [ ] Credits do not count as points, used only for buying at Markets
 - [ ] Power Crystals: Some cards/effects require you to have a Crystal in your possession to trigger
