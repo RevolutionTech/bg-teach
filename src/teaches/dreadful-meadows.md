@@ -6,6 +6,7 @@
   - [ ] Each player plays a different Confectioner with a different special power
 - [ ] Objective: most VPs (placement of harvesters, completing Concoction cards, leftover candy)
 - [ ] Game end: final round triggered when 1 harvester remaining, bag is empty, or all Concoction cards drawn
+  - [ ] Current player finishes turn, all other players get 1 more turn
 - [ ] Different candies have different values, they are used for payment and you can't get change
 - [ ] Turn overview: take an action
   - [ ] Can fulfill Concoction cards anytime during turn
@@ -35,3 +36,4 @@
   - [ ] Dreadful Tree candy is wild
 - [ ] Harvesters score VPs = value of patch + 1 VP for each patch without a harvester in its cluster
 - [ ] 1 VP for every $5 worth of candy
+- [ ] Tiebreaker: highest value of leftover candy, most patches

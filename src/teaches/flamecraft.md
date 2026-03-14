@@ -1,3 +1,5 @@
+# Flamecraft
+
 ### Overview
 
 - [ ] Theme & vibe: cozy, artisan dragons creating goods
