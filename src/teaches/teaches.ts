@@ -20,6 +20,7 @@ import FalloutShelter from "url:./fallout-shelter.md";
 import Flamecraft from "url:./flamecraft.md";
 import ForbiddenIsland from "url:./forbidden-island.md";
 import ForgottenWaters from "url:./forgotten-waters.md";
+import Formaggio from "url:./formaggio.md";
 import FormulaD from "url:./formula-d.md";
 import FrenchToast from "url:./french-toast.md";
 import Fromage from "url:./fromage.md";
@@ -162,6 +163,11 @@ export const TEACHES: TeachInfo[] = sortBy(
       teachId: "forgotten-waters",
       title: "Forgotten Waters",
       notes: ForgottenWaters,
+    },
+    {
+      teachId: "formaggio",
+      title: "Formaggio",
+      notes: Formaggio,
     },
     {
       teachId: "formula-d",

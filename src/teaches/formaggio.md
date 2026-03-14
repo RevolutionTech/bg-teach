@@ -1,10 +1,10 @@
-# Fromage
+# Formaggio
 
 ### Summary
 
 - [ ] Theme & vibe
 - [ ] Simultaneous worker placement
-- [ ] Objective: most Prestige PPs (PP)
+- [ ] Objective: most Prestige Points (PP)
 
 ### Overview
 
@@ -16,7 +16,7 @@
 
 - [ ] Flow: retrieve workers, gather resources and/or make cheese
 - [ ] Retrieve workers facing you
-  - [ ] More valuable cheeses take more turns to age (bronze: 1, silver: 2, gold: 3)
+  - [ ] More valuable cheeses take more turns to age (bronze: 1, silver: 2, gold: 3, platinum: 4)
   - [ ] Workers can be used turn retrieved
 - [ ] Make cheese: place cheese and worker of matching cheese type (soft, hard, bleu)
   - [ ] Max once per turn
@@ -27,12 +27,17 @@
 
 ### Venues
 
-- [ ] Festival: score PP for orthogonally adjacent cheeses
-  - [ ] Free sample spaces match all players
-- [ ] Fromagerie: gain bonus for placing on shelf and score for number of unique shelves placed
-- [ ] Bistro: score PP for each plate of cheese based on number of pairings
-- [ ] Villes: score PP for having most influence in different regions
-  - [ ] Tied influence scores lower point value to tied players
+- [ ] Banca: score sets in rows and columns
+  - [ ] Row of 2+ cheese: 2/5/9/10 PP
+  - [ ] Column of 2/3/4 cheese: 4/10/18 PP
+  - [ ] Platinum: wild for all 3 columns
+- [ ] Venezia: place Gondolas when making cheese
+  - [ ] Score Gondolas adjacent to your tokens at game-end
+  - [ ] Can double/triple count if Gondola touches multiple tokens
+- [ ] Vigneto: take Wine Tile when making cheese
+  - [ ] Place in linear sequence (left or right end only; no rearranging)
+  - [ ] Match icons for Wine Bottles (PP) or Wild Resources, gain Resources immediately
+- [ ] Regioni: score (your regions) x (your total flags)
 
 ### Resources
 
