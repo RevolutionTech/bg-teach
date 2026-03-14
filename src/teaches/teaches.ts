@@ -17,6 +17,7 @@ import Downforce from "url:./downforce.md";
 import DraculasFeast from "url:./draculas-feast.md";
 import DreadfulMeadows from "url:./dreadful-meadows.md";
 import FalloutShelter from "url:./fallout-shelter.md";
+import Flamecraft from "url:./flamecraft.md";
 import ForbiddenIsland from "url:./forbidden-island.md";
 import ForgottenWaters from "url:./forgotten-waters.md";
 import FormulaD from "url:./formula-d.md";
@@ -141,6 +142,11 @@ export const TEACHES: TeachInfo[] = sortBy(
       teachId: "fallout-shelter",
       title: "Fallout Shelter",
       notes: FalloutShelter,
+    },
+    {
+      teachId: "flamecraft",
+      title: "Flamecraft",
+      notes: Flamecraft,
     },
     {
       teachId: "french-toast",
