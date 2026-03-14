@@ -39,6 +39,7 @@ import Sandbag from "url:./sandbag.md";
 import ShadowsOverCamelot from "url:./shadows-over-camelot.md";
 import SilverAndGold from "url:./silver-and-gold.md";
 import StardewValley from "url:./stardew-valley.md";
+import SurfosaurusMax from "url:./surfosaurus-max.md";
 import TeaWitches from "url:./tea-witches.md";
 import TragedyLooper from "url:./tragedy-looper.md";
 import TuringMachine from "url:./turing-machine.md";
@@ -248,6 +249,11 @@ export const TEACHES: TeachInfo[] = sortBy(
       teachId: "stardew-valley",
       title: "Stardew Valley: The Board Game",
       notes: StardewValley,
+    },
+    {
+      teachId: "surfosaurus-max",
+      title: "Surfosaurus Max",
+      notes: SurfosaurusMax,
     },
     {
       teachId: "tea-witches",
