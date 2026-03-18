@@ -26,6 +26,7 @@ import FrenchToast from "url:./french-toast.md";
 import Fromage from "url:./fromage.md";
 import GalaxyTrucker from "url:./galaxy-trucker.md";
 import GirlsVsGhouls from "url:./girls-vs-ghouls.md";
+import Hardback from "url:./hardback.md";
 import Hearts from "url:./hearts.md";
 import HoneyBuzz from "url:./honey-buzz.md";
 import LetterJam from "url:./letter-jam.md";
@@ -36,6 +37,7 @@ import Mariposas from "url:./mariposas.md";
 import MarvelChampions from "url:./marvel-champions.md";
 import NyctophobiaVampire from "url:./nyctophobia-vampire.md";
 import OffWithTheirHeads from "url:./off-with-their-heads.md";
+import Paperback from "url:./paperback.md";
 import PhantomInkArcana from "url:./phantom-ink-arcana.md";
 import Pollen from "url:./pollen.md";
 import SanJuan from "url:./san-juan.md";
@@ -190,6 +192,11 @@ export const TEACHES: TeachInfo[] = sortBy(
       notes: GirlsVsGhouls,
     },
     {
+      teachId: "hardback",
+      title: "Hardback",
+      notes: Hardback,
+    },
+    {
       teachId: "hearts",
       title: "Hearts",
       notes: Hearts,
@@ -238,6 +245,11 @@ export const TEACHES: TeachInfo[] = sortBy(
       teachId: "off-with-their-heads",
       title: "Off With Their Heads!",
       notes: OffWithTheirHeads,
+    },
+    {
+      teachId: "paperback",
+      title: "Paperback",
+      notes: Paperback,
     },
     {
       teachId: "phantom-ink-arcana",
