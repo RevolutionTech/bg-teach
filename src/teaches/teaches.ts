@@ -31,6 +31,7 @@ import Hearts from "url:./hearts.md";
 import HoneyBuzz from "url:./honey-buzz.md";
 import LetterJam from "url:./letter-jam.md";
 import LibertaliaWindsOfGalecrest from "url:./libertalia-winds-of-galecrest.md";
+import LordsOfWaterdeep from "url:./lords-of-waterdeep.md";
 import LostRuinsOfArnak from "url:./lost-ruins-of-arnak.md";
 import ManhattanProject from "url:./manhattan-project.md";
 import Mariposas from "url:./mariposas.md";
@@ -215,6 +216,11 @@ export const TEACHES: TeachInfo[] = sortBy(
       teachId: "liberalia-winds-of-galecrest",
       title: "Libertalia: Winds of Galecrest",
       notes: LibertaliaWindsOfGalecrest,
+    },
+    {
+      teachId: "lords-of-waterdeep",
+      title: "Lords of Waterdeep",
+      notes: LordsOfWaterdeep,
     },
     {
       teachId: "lost-ruins-of-arnak",
