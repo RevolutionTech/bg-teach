@@ -29,6 +29,7 @@ import GirlsVsGhouls from "url:./girls-vs-ghouls.md";
 import Hardback from "url:./hardback.md";
 import Hearts from "url:./hearts.md";
 import HoneyBuzz from "url:./honey-buzz.md";
+import LetsGoToJapan from "url:./lets-go-to-japan.md";
 import LetterJam from "url:./letter-jam.md";
 import LibertaliaWindsOfGalecrest from "url:./libertalia-winds-of-galecrest.md";
 import LordsOfWaterdeep from "url:./lords-of-waterdeep.md";
@@ -208,6 +209,11 @@ export const TEACHES: TeachInfo[] = sortBy(
       teachId: "honey-buzz",
       title: "Honey Buzz",
       notes: HoneyBuzz,
+    },
+    {
+      teachId: "lets-go-to-japan",
+      title: "Let's Go! To Japan",
+      notes: LetsGoToJapan,
     },
     {
       teachId: "letter-jam",
