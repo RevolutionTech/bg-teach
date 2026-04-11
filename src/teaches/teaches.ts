@@ -51,6 +51,7 @@ import SteamPark from "url:./steam-park.md";
 import SurfosaurusMax from "url:./surfosaurus-max.md";
 import TeaWitches from "url:./tea-witches.md";
 import TheFoxExperiment from "url:./the-fox-experiment.md";
+import ToyBattle from "url:./toy-battle.md";
 import TragedyLooper from "url:./tragedy-looper.md";
 import TuringMachine from "url:./turing-machine.md";
 import Tzolkin from "url:./tzolkin.md";
@@ -320,6 +321,11 @@ export const TEACHES: TeachInfo[] = sortBy(
       teachId: "the-fox-experiment",
       title: "The Fox Experiment",
       notes: TheFoxExperiment,
+    },
+    {
+      teachId: "toy-battle",
+      title: "Toy Battle",
+      notes: ToyBattle,
     },
     {
       teachId: "tragedy-looper",
