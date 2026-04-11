@@ -17,7 +17,7 @@
 - [ ] **Steps per pup** (must complete one pup entirely before starting next):
   - [ ] Draw blank pup card
   - [ ] Gather dice: All trait dice on both parents + unlocked player friendly dice
-  - [ ] Roll &amp; arrange: Match half-symbols to form full trait symbols; halves alone do nothing
+  - [ ] Roll & arrange: Match half-symbols to form full trait symbols; halves alone do nothing
   - [ ] Friendly dice/tokens: Wild; can complete any trait or form full wild symbols
   - [ ] Record traits: Mark pup's trait tracks for each completed symbol
   - [ ] Record friendliness: Total number of completed symbols
