@@ -53,6 +53,7 @@ import TeaWitches from "url:./tea-witches.md";
 import TheFoxExperiment from "url:./the-fox-experiment.md";
 import TragedyLooper from "url:./tragedy-looper.md";
 import TuringMachine from "url:./turing-machine.md";
+import Targi from "url:./targi.md";
 import Tzolkin from "url:./tzolkin.md";
 import Vagrantsong from "url:./vagrantsong.md";
 import Vivo from "url:./vivo.md";
@@ -330,6 +331,11 @@ export const TEACHES: TeachInfo[] = sortBy(
       teachId: "turing-machine",
       title: "Turing Machine",
       notes: TuringMachine,
+    },
+    {
+      teachId: "targi",
+      title: "Targi",
+      notes: Targi,
     },
     {
       teachId: "tzolkin",
