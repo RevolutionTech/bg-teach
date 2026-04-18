@@ -43,6 +43,7 @@ import OffWithTheirHeads from "url:./off-with-their-heads.md";
 import Paperback from "url:./paperback.md";
 import PhantomInkArcana from "url:./phantom-ink-arcana.md";
 import Pollen from "url:./pollen.md";
+import RobinsonCrusoe from "url:./robinson-crusoe.md";
 import Rum from "url:./rum.md";
 import SanJuan from "url:./san-juan.md";
 import Sandbag from "url:./sandbag.md";
@@ -285,6 +286,11 @@ export const TEACHES: TeachInfo[] = sortBy(
       teachId: "pollen",
       title: "Pollen",
       notes: Pollen,
+    },
+    {
+      teachId: "robinson-crusoe",
+      title: "Robinson Crusoe: Adventures on the Cursed Island",
+      notes: RobinsonCrusoe,
     },
     {
       teachId: "rum",
