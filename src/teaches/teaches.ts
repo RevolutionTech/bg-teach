@@ -10,6 +10,7 @@ import CosmicEncounter from "url:./cosmic-encounter.md";
 import CritterKitchen from "url:./critter-kitchen.md";
 import Cryptid from "url:./cryptid.md";
 import ColtExpress from "url:./colt-express.md";
+import DisneyVillainous from "url:./disney-villainous.md";
 import DeadOfWinter from "url:./dead-of-winter.md";
 import DeadlyDowagers from "url:./deadly-dowagers.md";
 import DevilsDice from "url:./devils-dice.md";
@@ -118,6 +119,11 @@ export const TEACHES: TeachInfo[] = sortBy(
       teachId: "colt-express",
       title: "Colt Express",
       notes: ColtExpress,
+    },
+    {
+      teachId: "disney-villainous",
+      title: "Disney Villainous",
+      notes: DisneyVillainous,
     },
     {
       teachId: "dead-of-winter",
