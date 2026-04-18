@@ -56,6 +56,7 @@ import SurfosaurusMax from "url:./surfosaurus-max.md";
 import Targi from "url:./targi.md";
 import TeaWitches from "url:./tea-witches.md";
 import TheFoxExperiment from "url:./the-fox-experiment.md";
+import TheShipwreckArcana from "url:./the-shipwreck-arcana.md";
 import ToyBattle from "url:./toy-battle.md";
 import TragedyLooper from "url:./tragedy-looper.md";
 import TuringMachine from "url:./turing-machine.md";
@@ -352,6 +353,11 @@ export const TEACHES: TeachInfo[] = sortBy(
       teachId: "the-fox-experiment",
       title: "The Fox Experiment",
       notes: TheFoxExperiment,
+    },
+    {
+      teachId: "the-shipwreck-arcana",
+      title: "The Shipwreck Arcana",
+      notes: TheShipwreckArcana,
     },
     {
       teachId: "toy-battle",
