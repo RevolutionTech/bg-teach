@@ -45,6 +45,7 @@ import PhantomInkArcana from "url:./phantom-ink-arcana.md";
 import Pollen from "url:./pollen.md";
 import RobinsonCrusoe from "url:./robinson-crusoe.md";
 import Rum from "url:./rum.md";
+import Sail from "url:./sail.md";
 import SanJuan from "url:./san-juan.md";
 import Sandbag from "url:./sandbag.md";
 import ShadowsOverCamelot from "url:./shadows-over-camelot.md";
@@ -296,6 +297,11 @@ export const TEACHES: TeachInfo[] = sortBy(
       teachId: "rum",
       title: "RUM",
       notes: Rum,
+    },
+    {
+      teachId: "sail",
+      title: "Sail",
+      notes: Sail,
     },
     {
       teachId: "san-juan",
