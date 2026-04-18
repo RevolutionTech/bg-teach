@@ -6,14 +6,14 @@ import Calico from "url:./calico.md";
 import CaptainSonar from "url:./captain-sonar.md";
 import CastlesOfBurgundy from "url:./castles-of-burgundy.md";
 import ClankInSpace from "url:./clank-in-space.md";
+import ColtExpress from "url:./colt-express.md";
 import CosmicEncounter from "url:./cosmic-encounter.md";
 import CritterKitchen from "url:./critter-kitchen.md";
 import Cryptid from "url:./cryptid.md";
-import ColtExpress from "url:./colt-express.md";
-import DisneyVillainous from "url:./disney-villainous.md";
 import DeadOfWinter from "url:./dead-of-winter.md";
 import DeadlyDowagers from "url:./deadly-dowagers.md";
 import DevilsDice from "url:./devils-dice.md";
+import DisneyVillainous from "url:./disney-villainous.md";
 import Downforce from "url:./downforce.md";
 import DraculasFeast from "url:./draculas-feast.md";
 import DreadfulMeadows from "url:./dreadful-meadows.md";
@@ -51,12 +51,12 @@ import SilverAndGold from "url:./silver-and-gold.md";
 import StardewValley from "url:./stardew-valley.md";
 import SteamPark from "url:./steam-park.md";
 import SurfosaurusMax from "url:./surfosaurus-max.md";
+import Targi from "url:./targi.md";
 import TeaWitches from "url:./tea-witches.md";
 import TheFoxExperiment from "url:./the-fox-experiment.md";
 import ToyBattle from "url:./toy-battle.md";
 import TragedyLooper from "url:./tragedy-looper.md";
 import TuringMachine from "url:./turing-machine.md";
-import Targi from "url:./targi.md";
 import Tzolkin from "url:./tzolkin.md";
 import Vagrantsong from "url:./vagrantsong.md";
 import Vivo from "url:./vivo.md";
@@ -101,6 +101,11 @@ export const TEACHES: TeachInfo[] = sortBy(
       notes: ClankInSpace,
     },
     {
+      teachId: "colt-express",
+      title: "Colt Express",
+      notes: ColtExpress,
+    },
+    {
       teachId: "cosmic-encounter",
       title: "Cosmic Encounter",
       notes: CosmicEncounter,
@@ -116,16 +121,6 @@ export const TEACHES: TeachInfo[] = sortBy(
       notes: Cryptid,
     },
     {
-      teachId: "colt-express",
-      title: "Colt Express",
-      notes: ColtExpress,
-    },
-    {
-      teachId: "disney-villainous",
-      title: "Disney Villainous",
-      notes: DisneyVillainous,
-    },
-    {
       teachId: "dead-of-winter",
       title: "Dead of Winter: A Crossroads Game",
       notes: DeadOfWinter,
@@ -139,6 +134,11 @@ export const TEACHES: TeachInfo[] = sortBy(
       teachId: "devils-dice",
       title: "Devil's Dice",
       notes: DevilsDice,
+    },
+    {
+      teachId: "disney-villainous",
+      title: "Disney Villainous",
+      notes: DisneyVillainous,
     },
     {
       teachId: "downforce",
@@ -166,11 +166,6 @@ export const TEACHES: TeachInfo[] = sortBy(
       notes: Flamecraft,
     },
     {
-      teachId: "french-toast",
-      title: "French Toast",
-      notes: FrenchToast,
-    },
-    {
       teachId: "forbidden-island",
       title: "Forbidden Island",
       notes: ForbiddenIsland,
@@ -189,6 +184,11 @@ export const TEACHES: TeachInfo[] = sortBy(
       teachId: "formula-d",
       title: "Formula D",
       notes: FormulaD,
+    },
+    {
+      teachId: "french-toast",
+      title: "French Toast",
+      notes: FrenchToast,
     },
     {
       teachId: "fromage",
@@ -326,6 +326,11 @@ export const TEACHES: TeachInfo[] = sortBy(
       notes: SurfosaurusMax,
     },
     {
+      teachId: "targi",
+      title: "Targi",
+      notes: Targi,
+    },
+    {
       teachId: "tea-witches",
       title: "Tea Witches",
       notes: TeaWitches,
@@ -349,11 +354,6 @@ export const TEACHES: TeachInfo[] = sortBy(
       teachId: "turing-machine",
       title: "Turing Machine",
       notes: TuringMachine,
-    },
-    {
-      teachId: "targi",
-      title: "Targi",
-      notes: Targi,
     },
     {
       teachId: "tzolkin",
