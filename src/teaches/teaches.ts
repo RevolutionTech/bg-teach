@@ -42,6 +42,7 @@ import OffWithTheirHeads from "url:./off-with-their-heads.md";
 import Paperback from "url:./paperback.md";
 import PhantomInkArcana from "url:./phantom-ink-arcana.md";
 import Pollen from "url:./pollen.md";
+import Rum from "url:./rum.md";
 import SanJuan from "url:./san-juan.md";
 import Sandbag from "url:./sandbag.md";
 import ShadowsOverCamelot from "url:./shadows-over-camelot.md";
@@ -277,6 +278,11 @@ export const TEACHES: TeachInfo[] = sortBy(
       teachId: "pollen",
       title: "Pollen",
       notes: Pollen,
+    },
+    {
+      teachId: "rum",
+      title: "RUM",
+      notes: Rum,
     },
     {
       teachId: "san-juan",
