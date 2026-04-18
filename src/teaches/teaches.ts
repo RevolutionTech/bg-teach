@@ -60,6 +60,7 @@ import TuringMachine from "url:./turing-machine.md";
 import Tzolkin from "url:./tzolkin.md";
 import Vagrantsong from "url:./vagrantsong.md";
 import Vivo from "url:./vivo.md";
+import Voyages from "url:./voyages.md";
 import WesternLegends from "url:./western-legends.md";
 
 export interface TeachInfo {
@@ -369,6 +370,11 @@ export const TEACHES: TeachInfo[] = sortBy(
       teachId: "vivo",
       title: "Vivo",
       notes: Vivo,
+    },
+    {
+      teachId: "voyages",
+      title: "Voyages",
+      notes: Voyages,
     },
     {
       teachId: "western-legends",
