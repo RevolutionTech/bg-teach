@@ -43,6 +43,7 @@ import OffWithTheirHeads from "url:./off-with-their-heads.md";
 import Paperback from "url:./paperback.md";
 import PhantomInkArcana from "url:./phantom-ink-arcana.md";
 import Pollen from "url:./pollen.md";
+import RicochetRobots from "url:./ricochet-robots.md";
 import RobinsonCrusoe from "url:./robinson-crusoe.md";
 import Rum from "url:./rum.md";
 import Sail from "url:./sail.md";
@@ -288,6 +289,11 @@ export const TEACHES: TeachInfo[] = sortBy(
       teachId: "pollen",
       title: "Pollen",
       notes: Pollen,
+    },
+    {
+      teachId: "ricochet-robots",
+      title: "Ricochet Robots",
+      notes: RicochetRobots,
     },
     {
       teachId: "robinson-crusoe",
