@@ -65,6 +65,7 @@ import Tzolkin from "url:./tzolkin.md";
 import Vagrantsong from "url:./vagrantsong.md";
 import Vivo from "url:./vivo.md";
 import Voyages from "url:./voyages.md";
+import Waypoints from "url:./waypoints.md";
 import WesternLegends from "url:./western-legends.md";
 
 export interface TeachInfo {
@@ -399,6 +400,11 @@ export const TEACHES: TeachInfo[] = sortBy(
       teachId: "voyages",
       title: "Voyages",
       notes: Voyages,
+    },
+    {
+      teachId: "waypoints",
+      title: "Waypoints",
+      notes: Waypoints,
     },
     {
       teachId: "western-legends",
