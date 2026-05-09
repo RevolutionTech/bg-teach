@@ -4,6 +4,7 @@ import Bacon from "url:./bacon.md";
 import CafeBaras from "url:./cafe-baras.md";
 import Calico from "url:./calico.md";
 import CaptainSonar from "url:./captain-sonar.md";
+import Cartographers from "url:./cartographers.md";
 import CastlesOfBurgundy from "url:./castles-of-burgundy.md";
 import ClankInSpace from "url:./clank-in-space.md";
 import ColtExpress from "url:./colt-express.md";
@@ -95,6 +96,11 @@ export const TEACHES: TeachInfo[] = sortBy(
       teachId: "captain-sonar",
       title: "Captain Sonar",
       notes: CaptainSonar,
+    },
+    {
+      teachId: "cartographers",
+      title: "Cartographers",
+      notes: Cartographers,
     },
     {
       teachId: "castles-of-burgundy",
