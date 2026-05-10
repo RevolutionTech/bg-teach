@@ -65,6 +65,7 @@ import TragedyLooper from "url:./tragedy-looper.md";
 import TuringMachine from "url:./turing-machine.md";
 import Tzolkin from "url:./tzolkin.md";
 import Vagrantsong from "url:./vagrantsong.md";
+import Vantage from "url:./vantage.md";
 import Vivo from "url:./vivo.md";
 import Voyages from "url:./voyages.md";
 import Waypoints from "url:./waypoints.md";
@@ -402,6 +403,11 @@ export const TEACHES: TeachInfo[] = sortBy(
       teachId: "vagrantsong",
       title: "Vagrantsong",
       notes: Vagrantsong,
+    },
+    {
+      teachId: "vantage",
+      title: "Vantage",
+      notes: Vantage,
     },
     {
       teachId: "vivo",
