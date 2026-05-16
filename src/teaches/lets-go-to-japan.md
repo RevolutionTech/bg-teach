@@ -11,7 +11,6 @@
 
 - [ ] Round overview: Draw cards, Play cards, Resolve Day Bonuses (if 3rd card placed), Pass cards
   - [ ] Passing direction: rounds 1-7 Left, rounds 8-12 Right
-- [ ] Round 13: draw 1 card, keep both cards (no passing)
 - [ ] Research tokens: discard to draw 3 cards (any mix), then discard 3 cards from hand
   - [ ] Use any number of times during turn
 
@@ -32,8 +31,8 @@
 - [ ] Triggered when placing 3rd card in a day
 - [ ] Count icons matching that day's Favorable Condition token
 - [ ] Rewards:
-  - [ ] 1 Match: +1 Mood OR 2 Research tokens
-  - [ ] 2 Matches: 1 Wild token OR any "1 Match" reward
+  - [ ] 1 Match: +1 Mood
+  - [ ] 2 Matches: 2 Research tokens OR 1 Wild token OR any "1 Match" reward
   - [ ] 3+ Matches: 1 Luxury Train OR "Extra Walk" (4th card) OR any lower reward
 - [ ] Mood Track: if token hits far right, +1 Happiness (reset to center); if far left, +1 Stress (reset to center)
 
@@ -47,8 +46,8 @@
   - [ ] Start of trip (Monday first card): free "0 VP" train
 - [ ] Highlights: score Highlight of the Day bonus if requirements met
 - [ ] Walks: flip face-down cards
-  - [ ] Spend Walk token: flip face-up, resolve icons/points
-  - [ ] No Walk token: stay face-down (+1 VP, +1 Mood, +1 Walk icon)
+  - [ ] Can use either side (has Walk token either way)
+  - [ ] If face-down: +1 VP, +1 Mood
 
 ### Scoring
 
