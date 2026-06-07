@@ -1,5 +1,6 @@
 import { keyBy, sortBy } from "lodash";
 
+import FiftyFirstState from "url:./51st-state.md";
 import Atiwa from "url:./atiwa.md";
 import Bacon from "url:./bacon.md";
 import CafeBaras from "url:./cafe-baras.md";
@@ -79,6 +80,11 @@ export interface TeachInfo {
 
 export const TEACHES: TeachInfo[] = sortBy(
   [
+    {
+      teachId: "51st-state",
+      title: "51st State",
+      notes: FiftyFirstState,
+    },
     {
       teachId: "atiwa",
       title: "Atiwa",
