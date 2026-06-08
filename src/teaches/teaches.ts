@@ -20,6 +20,7 @@ import DisneyVillainous from "url:./disney-villainous.md";
 import Downforce from "url:./downforce.md";
 import DraculasFeast from "url:./draculas-feast.md";
 import DreadfulMeadows from "url:./dreadful-meadows.md";
+import Emberheart from "url:./emberheart.md";
 import FalloutShelter from "url:./fallout-shelter.md";
 import Flamecraft from "url:./flamecraft.md";
 import ForbiddenIsland from "url:./forbidden-island.md";
@@ -179,6 +180,11 @@ export const TEACHES: TeachInfo[] = sortBy(
       teachId: "dreadful-meadows",
       title: "Dreadful Meadows",
       notes: DreadfulMeadows,
+    },
+    {
+      teachId: "emberheart",
+      title: "Emberheart",
+      notes: Emberheart,
     },
     {
       teachId: "fallout-shelter",
