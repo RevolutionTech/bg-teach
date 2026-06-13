@@ -30,6 +30,7 @@ import FormulaD from "url:./formula-d.md";
 import FrenchToast from "url:./french-toast.md";
 import Fromage from "url:./fromage.md";
 import GalaxyTrucker from "url:./galaxy-trucker.md";
+import Gutenberg from "url:./gutenberg.md";
 import GirlsVsGhouls from "url:./girls-vs-ghouls.md";
 import Hardback from "url:./hardback.md";
 import Hearts from "url:./hearts.md";
@@ -230,6 +231,11 @@ export const TEACHES: TeachInfo[] = sortBy(
       teachId: "galaxy-trucker",
       title: "Galaxy Trucker",
       notes: GalaxyTrucker,
+    },
+    {
+      teachId: "gutenberg",
+      title: "Gutenberg",
+      notes: Gutenberg,
     },
     {
       teachId: "girls-vs-ghouls",
