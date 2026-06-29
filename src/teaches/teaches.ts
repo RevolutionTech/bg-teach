@@ -1,6 +1,7 @@
 import { keyBy, sortBy } from "lodash";
 
 import FiftyFirstState from "url:./51st-state.md";
+import AllInPredictions from "url:./all-in-predictions.md";
 import Atiwa from "url:./atiwa.md";
 import Bacon from "url:./bacon.md";
 import CafeBaras from "url:./cafe-baras.md";
@@ -87,6 +88,11 @@ export const TEACHES: TeachInfo[] = sortBy(
       teachId: "51st-state",
       title: "51st State",
       notes: FiftyFirstState,
+    },
+    {
+      teachId: "all-in-predictions",
+      title: "All In: Predictions",
+      notes: AllInPredictions,
     },
     {
       teachId: "atiwa",
