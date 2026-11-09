@@ -44,6 +44,7 @@ import LostRuinsOfArnak from "url:./lost-ruins-of-arnak.md";
 import ManhattanProject from "url:./manhattan-project.md";
 import Mariposas from "url:./mariposas.md";
 import MarvelChampions from "url:./marvel-champions.md";
+import Money from "url:./money.md";
 import NyctophobiaVampire from "url:./nyctophobia-vampire.md";
 import OffWithTheirHeads from "url:./off-with-their-heads.md";
 import Paperback from "url:./paperback.md";
@@ -303,6 +304,11 @@ export const TEACHES: TeachInfo[] = sortBy(
       teachId: "marvel-champions",
       title: "Marvel Champions",
       notes: MarvelChampions,
+    },
+    {
+      teachId: "money",
+      title: "Money!",
+      notes: Money,
     },
     {
       teachId: "nyctophobia-vampire",
