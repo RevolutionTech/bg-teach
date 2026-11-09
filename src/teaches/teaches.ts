@@ -4,6 +4,7 @@ import FiftyFirstState from "url:./51st-state.md";
 import AllInPredictions from "url:./all-in-predictions.md";
 import Atiwa from "url:./atiwa.md";
 import Bacon from "url:./bacon.md";
+import BangTheDiceGame from "url:./bang-the-dice-game.md";
 import CafeBaras from "url:./cafe-baras.md";
 import Calico from "url:./calico.md";
 import CaptainSonar from "url:./captain-sonar.md";
@@ -103,6 +104,11 @@ export const TEACHES: TeachInfo[] = sortBy(
       teachId: "bacon",
       title: "Bacon",
       notes: Bacon,
+    },
+    {
+      teachId: "bang-the-dice-game",
+      title: "Bang! The Dice Game",
+      notes: BangTheDiceGame,
     },
     {
       teachId: "cafe-baras",
