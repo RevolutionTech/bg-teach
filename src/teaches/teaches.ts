@@ -60,6 +60,7 @@ import SilverAndGold from "url:./silver-and-gold.md";
 import StardewValley from "url:./stardew-valley.md";
 import SteamPark from "url:./steam-park.md";
 import SurfosaurusMax from "url:./surfosaurus-max.md";
+import Tacta from "url:./tacta.md";
 import Targi from "url:./targi.md";
 import TeaWitches from "url:./tea-witches.md";
 import TheFoxExperiment from "url:./the-fox-experiment.md";
@@ -383,6 +384,11 @@ export const TEACHES: TeachInfo[] = sortBy(
       teachId: "surfosaurus-max",
       title: "Surfosaurus Max",
       notes: SurfosaurusMax,
+    },
+    {
+      teachId: "tacta",
+      title: "Tacta",
+      notes: Tacta,
     },
     {
       teachId: "targi",
