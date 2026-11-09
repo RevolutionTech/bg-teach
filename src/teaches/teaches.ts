@@ -17,6 +17,7 @@ import CritterKitchen from "url:./critter-kitchen.md";
 import Cryptid from "url:./cryptid.md";
 import DeadOfWinter from "url:./dead-of-winter.md";
 import DeadlyDowagers from "url:./deadly-dowagers.md";
+import DeepSeaAdventure from "url:./deep-sea-adventure.md";
 import DevilsDice from "url:./devils-dice.md";
 import DisneyVillainous from "url:./disney-villainous.md";
 import Downforce from "url:./downforce.md";
@@ -170,6 +171,11 @@ export const TEACHES: TeachInfo[] = sortBy(
       teachId: "deadly-dowagers",
       title: "Deadly Dowagers",
       notes: DeadlyDowagers,
+    },
+    {
+      teachId: "deep-sea-adventure",
+      title: "Deep Sea Adventure",
+      notes: DeepSeaAdventure,
     },
     {
       teachId: "devils-dice",
