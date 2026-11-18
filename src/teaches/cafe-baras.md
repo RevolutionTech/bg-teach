@@ -1,45 +1,46 @@
-# Cafe Baras
+# Café Baras
 
 ### Overview
 
+- [ ] Theme & vibe
 - [ ] Objective: most VPs
-- [ ] Game end trigger: gain 4/3/3 Regulars (2/3/4 players) or last Special Guest claimed
-  - [ ] After trigger, each other player takes one final turn
+- [ ] Game end trigger: gain 4th/3rd/3rd Regular (2P/3P/4P) or deck shuffled 2nd time
+  - [ ] Each other player gets 1 more turn
 
 ### Turn
 
-- [ ] Choose 1 card from hand: **Add to Café** OR **Serve Customer**
-  - [ ] Cards have 2 parts, you choose one
-- [ ] Refill hand to 4 from display; refill display gap from deck
+- [ ] Play 1 card from hand: **Add** top OR **Serve** bottom customer, never both
+- [ ] Refill hand to 4 from display (your choice); then refill display from deck
+  - [ ] Deck empty → shuffle discard
 
-### Actions
+### Add
 
-- [ ] **Add to Café**
-  - [ ] Pay coin cost to add to horizontal row
-  - [ ] Resolve action text; circle arrow symbol indicates ongoing effect
-  - [ ] Card types: Food (provides icons), Decor (enables Regulars), Equipment (special effects/scoring)
-- [ ] **Serve Customer**
-  - [ ] Gain 1 coin per desired food type provided by café
-  - [ ] Café starts with food icons on Counter card
-  - [ ] Multi-coffee icons: must provide total count; counts as single food (1 coin)
-  - [ ] Discard card after serving unless it becomes a Regular
+- [ ] Pay cost to supply; add to café row
+- [ ] Resolve action text, if any; note ongoing symbol
+- [ ] Food banner = food your café provides; Decor banner = needed for Regulars
+- [ ] Keep symbols, scoring, names, ongoing actions visible
+- [ ] Café starts with only the Coffee/Tea on Counter card
 
-### Concepts
+### Serve
 
-- [ ] **Gaining Regulars**
-  - [ ] Condition: provide ALL desired foods AND have at least 1 preferred decor icon
-  - [ ] Tuck card under Counter; worth 4 VP
-- [ ] **Special Guests**
-  - [ ] Free action: claim card immediately if café meets criteria
-  - [ ] Worth 6 VP
+- [ ] +1 coin per desired food your café has
+  - [ ] Any food of that type OK
+  - [ ] Each symbol fills only 1 desire
+  - [ ] Loved food: +1 coin per matching symbol instead
+  - [ ] Decor earns no coins
+  - [ ] Serving for 0 coins OK
+- [ ] Discard customer, unless it becomes Regular
+
+### Regulars
+
+- [ ] All 3 desired foods + ≥1 preferred decor → Regular
+- [ ] Tuck under Counter card, chalkboard showing
 
 ### Scoring
 
-- [ ] 1 VP per 2 coins (round down)
-- [ ] Sum of VP values on Café cards (fixed or conditional)
-- [ ] 4 VP per Regular
-- [ ] 6 VP per Special Guest
-
-### Setup
-
-- [ ] Choose 1 of 4 Counter cards to begin café
+- [ ] Café card VPs (fixed or conditional)
+- [ ] 4 VPs per Regular
+- [ ] 6 VPs per Special Guest your café meets at game end
+  - [ ] Not claimed; any number of players can score same Guest
+- [ ] 1 VP per 2 coins
+- [ ] Tie: share win
