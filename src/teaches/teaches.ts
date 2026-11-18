@@ -65,6 +65,7 @@ import SteamPark from "url:./steam-park.md";
 import SurfosaurusMax from "url:./surfosaurus-max.md";
 import Tacta from "url:./tacta.md";
 import Targi from "url:./targi.md";
+import TeaGarden from "url:./tea-garden.md";
 import TeaWitches from "url:./tea-witches.md";
 import TheFoxExperiment from "url:./the-fox-experiment.md";
 import TheGrimmMasquerade from "url:./the-grimm-masquerade.md";
@@ -412,6 +413,11 @@ export const TEACHES: TeachInfo[] = sortBy(
       teachId: "targi",
       title: "Targi",
       notes: Targi,
+    },
+    {
+      teachId: "tea-garden",
+      title: "Tea Garden",
+      notes: TeaGarden,
     },
     {
       teachId: "tea-witches",
