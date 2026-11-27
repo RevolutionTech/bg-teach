@@ -16,8 +16,7 @@ This skill creates teach notes for board games — concise, bullet-point referen
 2. **Request a rulebook PDF** — Ask the user to provide a PDF of the rulebook. Only proceed without one if the user explicitly says they don't have it. If proceeding without a rulebook, use your knowledge of the game and note any rules you're uncertain about after the notes.
 3. **Write the teach notes** following the formatting and content guidelines below. Save them to `src/teaches/<teach-id>.md`, where `<teach-id>` is the game's title in kebab-case (e.g., `castles-of-burgundy.md`).
 4. **Register the teach** in `src/teaches/teaches.ts`:
-   - Add `import PascalCaseName from "url:./<teach-id>.md";` in alphabetical order by file name.
-   - Add `{ teachId: "<teach-id>", title: "<Game Title>", notes: PascalCaseName }` to `TEACHES`, next to the entries for neighboring titles. The list is sorted by `title` at runtime, so keep the title identical to the `#` heading in the Markdown file.
+   - Add `{ teachId: "<teach-id>", title: "<Game Title>" }` to `TEACHES`, next to the entries for neighboring titles. The app loads the notes from `<teach-id>.md`, so the `teachId` must match the file name exactly. The list is sorted by `title` at runtime, so keep the title identical to the `#` heading in the Markdown file.
 5. **Report** to the user: citations (rulebook pages, BGG references, etc.) and any rules you were uncertain about. Never put these in the Markdown file.
 
 ---

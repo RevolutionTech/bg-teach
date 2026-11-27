@@ -1,5 +1,3 @@
-import * as React from "react";
-
 import Header from "./molecules/Header";
 import Link from "./molecules/Link";
 import { TEACHES } from "./teaches/teaches";

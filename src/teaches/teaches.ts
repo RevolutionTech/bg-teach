@@ -1,495 +1,340 @@
-import { keyBy, sortBy } from "lodash";
-
-import FiftyFirstState from "url:./51st-state.md";
-import AllInPredictions from "url:./all-in-predictions.md";
-import Atiwa from "url:./atiwa.md";
-import Bacon from "url:./bacon.md";
-import BangTheDiceGame from "url:./bang-the-dice-game.md";
-import CafeBaras from "url:./cafe-baras.md";
-import Calico from "url:./calico.md";
-import CaptainSonar from "url:./captain-sonar.md";
-import Cartographers from "url:./cartographers.md";
-import CastlesOfBurgundy from "url:./castles-of-burgundy.md";
-import ClankInSpace from "url:./clank-in-space.md";
-import ColtExpress from "url:./colt-express.md";
-import CosmicEncounter from "url:./cosmic-encounter.md";
-import CritterKitchen from "url:./critter-kitchen.md";
-import Cryptid from "url:./cryptid.md";
-import DeadOfWinter from "url:./dead-of-winter.md";
-import DeadlyDowagers from "url:./deadly-dowagers.md";
-import DeepSeaAdventure from "url:./deep-sea-adventure.md";
-import DevilsDice from "url:./devils-dice.md";
-import DisneyVillainous from "url:./disney-villainous.md";
-import Downforce from "url:./downforce.md";
-import DraculasFeast from "url:./draculas-feast.md";
-import DreadfulMeadows from "url:./dreadful-meadows.md";
-import Emberheart from "url:./emberheart.md";
-import FalloutShelter from "url:./fallout-shelter.md";
-import Flamecraft from "url:./flamecraft.md";
-import ForbiddenIsland from "url:./forbidden-island.md";
-import ForgottenWaters from "url:./forgotten-waters.md";
-import Formaggio from "url:./formaggio.md";
-import FormulaD from "url:./formula-d.md";
-import FrenchToast from "url:./french-toast.md";
-import Fromage from "url:./fromage.md";
-import GalaxyTrucker from "url:./galaxy-trucker.md";
-import Gutenberg from "url:./gutenberg.md";
-import GirlsVsGhouls from "url:./girls-vs-ghouls.md";
-import Hardback from "url:./hardback.md";
-import Hearts from "url:./hearts.md";
-import HoneyBuzz from "url:./honey-buzz.md";
-import LetsGoToJapan from "url:./lets-go-to-japan.md";
-import LetterJam from "url:./letter-jam.md";
-import LibertaliaWindsOfGalecrest from "url:./libertalia-winds-of-galecrest.md";
-import LordsOfWaterdeep from "url:./lords-of-waterdeep.md";
-import LostRuinsOfArnak from "url:./lost-ruins-of-arnak.md";
-import ManhattanProject from "url:./manhattan-project.md";
-import Mariposas from "url:./mariposas.md";
-import MarvelChampions from "url:./marvel-champions.md";
-import Money from "url:./money.md";
-import NyctophobiaVampire from "url:./nyctophobia-vampire.md";
-import OffWithTheirHeads from "url:./off-with-their-heads.md";
-import Paperback from "url:./paperback.md";
-import PhantomInkArcana from "url:./phantom-ink-arcana.md";
-import Pollen from "url:./pollen.md";
-import RicochetRobots from "url:./ricochet-robots.md";
-import RobinsonCrusoe from "url:./robinson-crusoe.md";
-import Rum from "url:./rum.md";
-import Sail from "url:./sail.md";
-import SanJuan from "url:./san-juan.md";
-import Sandbag from "url:./sandbag.md";
-import ShadowsOverCamelot from "url:./shadows-over-camelot.md";
-import SilverAndGold from "url:./silver-and-gold.md";
-import StardewValley from "url:./stardew-valley.md";
-import SteamPark from "url:./steam-park.md";
-import SurfosaurusMax from "url:./surfosaurus-max.md";
-import Tacta from "url:./tacta.md";
-import Targi from "url:./targi.md";
-import TeaGarden from "url:./tea-garden.md";
-import TeaWitches from "url:./tea-witches.md";
-import TheFoxExperiment from "url:./the-fox-experiment.md";
-import TheGrimmMasquerade from "url:./the-grimm-masquerade.md";
-import TheShipwreckArcana from "url:./the-shipwreck-arcana.md";
-import ToyBattle from "url:./toy-battle.md";
-import TragedyLooper from "url:./tragedy-looper.md";
-import TuringMachine from "url:./turing-machine.md";
-import Tzolkin from "url:./tzolkin.md";
-import Vagrantsong from "url:./vagrantsong.md";
-import Vantage from "url:./vantage.md";
-import Vivo from "url:./vivo.md";
-import Voyages from "url:./voyages.md";
-import Waypoints from "url:./waypoints.md";
-import WesternLegends from "url:./western-legends.md";
+const NOTES_LOADERS = import.meta.glob<string>("./*.md", {
+  query: "?raw",
+  import: "default",
+});
 
 export interface TeachInfo {
   teachId: string;
   title: string;
-  notes: string;
 }
 
-export const TEACHES: TeachInfo[] = sortBy(
-  [
-    {
-      teachId: "51st-state",
-      title: "51st State",
-      notes: FiftyFirstState,
-    },
-    {
-      teachId: "all-in-predictions",
-      title: "All In: Predictions",
-      notes: AllInPredictions,
-    },
-    {
-      teachId: "atiwa",
-      title: "Atiwa",
-      notes: Atiwa,
-    },
-    {
-      teachId: "bacon",
-      title: "Bacon",
-      notes: Bacon,
-    },
-    {
-      teachId: "bang-the-dice-game",
-      title: "Bang! The Dice Game",
-      notes: BangTheDiceGame,
-    },
-    {
-      teachId: "cafe-baras",
-      title: "Café Baras",
-      notes: CafeBaras,
-    },
-    {
-      teachId: "calico",
-      title: "Calico",
-      notes: Calico,
-    },
-    {
-      teachId: "captain-sonar",
-      title: "Captain Sonar",
-      notes: CaptainSonar,
-    },
-    {
-      teachId: "cartographers",
-      title: "Cartographers",
-      notes: Cartographers,
-    },
-    {
-      teachId: "castles-of-burgundy",
-      title: "Castles of Burgundy",
-      notes: CastlesOfBurgundy,
-    },
-    {
-      teachId: "clank-in-space",
-      title: "Clank! In! Space!",
-      notes: ClankInSpace,
-    },
-    {
-      teachId: "colt-express",
-      title: "Colt Express",
-      notes: ColtExpress,
-    },
-    {
-      teachId: "cosmic-encounter",
-      title: "Cosmic Encounter",
-      notes: CosmicEncounter,
-    },
-    {
-      teachId: "critter-kitchen",
-      title: "Critter Kitchen",
-      notes: CritterKitchen,
-    },
-    {
-      teachId: "cryptid",
-      title: "Cryptid",
-      notes: Cryptid,
-    },
-    {
-      teachId: "dead-of-winter",
-      title: "Dead of Winter: A Crossroads Game",
-      notes: DeadOfWinter,
-    },
-    {
-      teachId: "deadly-dowagers",
-      title: "Deadly Dowagers",
-      notes: DeadlyDowagers,
-    },
-    {
-      teachId: "deep-sea-adventure",
-      title: "Deep Sea Adventure",
-      notes: DeepSeaAdventure,
-    },
-    {
-      teachId: "devils-dice",
-      title: "Devil's Dice",
-      notes: DevilsDice,
-    },
-    {
-      teachId: "disney-villainous",
-      title: "Disney Villainous",
-      notes: DisneyVillainous,
-    },
-    {
-      teachId: "downforce",
-      title: "Downforce",
-      notes: Downforce,
-    },
-    {
-      teachId: "draculas-feast",
-      title: "Dracula's Feast",
-      notes: DraculasFeast,
-    },
-    {
-      teachId: "dreadful-meadows",
-      title: "Dreadful Meadows",
-      notes: DreadfulMeadows,
-    },
-    {
-      teachId: "emberheart",
-      title: "Emberheart",
-      notes: Emberheart,
-    },
-    {
-      teachId: "fallout-shelter",
-      title: "Fallout Shelter",
-      notes: FalloutShelter,
-    },
-    {
-      teachId: "flamecraft",
-      title: "Flamecraft",
-      notes: Flamecraft,
-    },
-    {
-      teachId: "forbidden-island",
-      title: "Forbidden Island",
-      notes: ForbiddenIsland,
-    },
-    {
-      teachId: "forgotten-waters",
-      title: "Forgotten Waters",
-      notes: ForgottenWaters,
-    },
-    {
-      teachId: "formaggio",
-      title: "Formaggio",
-      notes: Formaggio,
-    },
-    {
-      teachId: "formula-d",
-      title: "Formula D",
-      notes: FormulaD,
-    },
-    {
-      teachId: "french-toast",
-      title: "French Toast",
-      notes: FrenchToast,
-    },
-    {
-      teachId: "fromage",
-      title: "Fromage",
-      notes: Fromage,
-    },
-    {
-      teachId: "galaxy-trucker",
-      title: "Galaxy Trucker",
-      notes: GalaxyTrucker,
-    },
-    {
-      teachId: "gutenberg",
-      title: "Gutenberg",
-      notes: Gutenberg,
-    },
-    {
-      teachId: "girls-vs-ghouls",
-      title: "Girls vs Ghouls",
-      notes: GirlsVsGhouls,
-    },
-    {
-      teachId: "hardback",
-      title: "Hardback",
-      notes: Hardback,
-    },
-    {
-      teachId: "hearts",
-      title: "Hearts",
-      notes: Hearts,
-    },
-    {
-      teachId: "honey-buzz",
-      title: "Honey Buzz",
-      notes: HoneyBuzz,
-    },
-    {
-      teachId: "lets-go-to-japan",
-      title: "Let's Go! To Japan",
-      notes: LetsGoToJapan,
-    },
-    {
-      teachId: "letter-jam",
-      title: "Letter Jam",
-      notes: LetterJam,
-    },
-    {
-      teachId: "liberalia-winds-of-galecrest",
-      title: "Libertalia: Winds of Galecrest",
-      notes: LibertaliaWindsOfGalecrest,
-    },
-    {
-      teachId: "lords-of-waterdeep",
-      title: "Lords of Waterdeep",
-      notes: LordsOfWaterdeep,
-    },
-    {
-      teachId: "lost-ruins-of-arnak",
-      title: "Lost Ruins of Arnak",
-      notes: LostRuinsOfArnak,
-    },
-    {
-      teachId: "manhattan-project",
-      title: "Manhattan Project",
-      notes: ManhattanProject,
-    },
-    {
-      teachId: "mariposas",
-      title: "Mariposas",
-      notes: Mariposas,
-    },
-    {
-      teachId: "marvel-champions",
-      title: "Marvel Champions",
-      notes: MarvelChampions,
-    },
-    {
-      teachId: "money",
-      title: "Money!",
-      notes: Money,
-    },
-    {
-      teachId: "nyctophobia-vampire",
-      title: "Nyctophobia: Vampire Encounter",
-      notes: NyctophobiaVampire,
-    },
-    {
-      teachId: "off-with-their-heads",
-      title: "Off With Their Heads!",
-      notes: OffWithTheirHeads,
-    },
-    {
-      teachId: "paperback",
-      title: "Paperback",
-      notes: Paperback,
-    },
-    {
-      teachId: "phantom-ink-arcana",
-      title: "Phantom Ink: Arcana",
-      notes: PhantomInkArcana,
-    },
-    {
-      teachId: "pollen",
-      title: "Pollen",
-      notes: Pollen,
-    },
-    {
-      teachId: "ricochet-robots",
-      title: "Ricochet Robots",
-      notes: RicochetRobots,
-    },
-    {
-      teachId: "robinson-crusoe",
-      title: "Robinson Crusoe: Adventures on the Cursed Island",
-      notes: RobinsonCrusoe,
-    },
-    {
-      teachId: "rum",
-      title: "RUM",
-      notes: Rum,
-    },
-    {
-      teachId: "sail",
-      title: "Sail",
-      notes: Sail,
-    },
-    {
-      teachId: "san-juan",
-      title: "San Juan",
-      notes: SanJuan,
-    },
-    {
-      teachId: "sandbag",
-      title: "Sandbag",
-      notes: Sandbag,
-    },
-    {
-      teachId: "shadows-over-camelot",
-      title: "Shadows over Camelot",
-      notes: ShadowsOverCamelot,
-    },
-    {
-      teachId: "silver-and-gold",
-      title: "Silver & Gold",
-      notes: SilverAndGold,
-    },
-    {
-      teachId: "stardew-valley",
-      title: "Stardew Valley: The Board Game",
-      notes: StardewValley,
-    },
-    {
-      teachId: "steam-park",
-      title: "Steam Park",
-      notes: SteamPark,
-    },
-    {
-      teachId: "surfosaurus-max",
-      title: "Surfosaurus Max",
-      notes: SurfosaurusMax,
-    },
-    {
-      teachId: "tacta",
-      title: "Tacta",
-      notes: Tacta,
-    },
-    {
-      teachId: "targi",
-      title: "Targi",
-      notes: Targi,
-    },
-    {
-      teachId: "tea-garden",
-      title: "Tea Garden",
-      notes: TeaGarden,
-    },
-    {
-      teachId: "tea-witches",
-      title: "Tea Witches",
-      notes: TeaWitches,
-    },
-    {
-      teachId: "the-fox-experiment",
-      title: "The Fox Experiment",
-      notes: TheFoxExperiment,
-    },
-    {
-      teachId: "the-grimm-masquerade",
-      title: "The Grimm Masquerade",
-      notes: TheGrimmMasquerade,
-    },
-    {
-      teachId: "the-shipwreck-arcana",
-      title: "The Shipwreck Arcana",
-      notes: TheShipwreckArcana,
-    },
-    {
-      teachId: "toy-battle",
-      title: "Toy Battle",
-      notes: ToyBattle,
-    },
-    {
-      teachId: "tragedy-looper",
-      title: "Tragedy Looper",
-      notes: TragedyLooper,
-    },
-    {
-      teachId: "turing-machine",
-      title: "Turing Machine",
-      notes: TuringMachine,
-    },
-    {
-      teachId: "tzolkin",
-      title: "Tzolk'in: The Mayan Calendar",
-      notes: Tzolkin,
-    },
-    {
-      teachId: "vagrantsong",
-      title: "Vagrantsong",
-      notes: Vagrantsong,
-    },
-    {
-      teachId: "vantage",
-      title: "Vantage",
-      notes: Vantage,
-    },
-    {
-      teachId: "vivo",
-      title: "Vivo",
-      notes: Vivo,
-    },
-    {
-      teachId: "voyages",
-      title: "Voyages",
-      notes: Voyages,
-    },
-    {
-      teachId: "waypoints",
-      title: "Waypoints",
-      notes: Waypoints,
-    },
-    {
-      teachId: "western-legends",
-      title: "Western Legends",
-      notes: WesternLegends,
-    },
-  ],
-  "title",
+export const TEACHES: TeachInfo[] = [
+  {
+    teachId: "51st-state",
+    title: "51st State",
+  },
+  {
+    teachId: "all-in-predictions",
+    title: "All In: Predictions",
+  },
+  {
+    teachId: "atiwa",
+    title: "Atiwa",
+  },
+  {
+    teachId: "bacon",
+    title: "Bacon",
+  },
+  {
+    teachId: "bang-the-dice-game",
+    title: "Bang! The Dice Game",
+  },
+  {
+    teachId: "cafe-baras",
+    title: "Café Baras",
+  },
+  {
+    teachId: "calico",
+    title: "Calico",
+  },
+  {
+    teachId: "captain-sonar",
+    title: "Captain Sonar",
+  },
+  {
+    teachId: "cartographers",
+    title: "Cartographers",
+  },
+  {
+    teachId: "castles-of-burgundy",
+    title: "Castles of Burgundy",
+  },
+  {
+    teachId: "clank-in-space",
+    title: "Clank! In! Space!",
+  },
+  {
+    teachId: "colt-express",
+    title: "Colt Express",
+  },
+  {
+    teachId: "cosmic-encounter",
+    title: "Cosmic Encounter",
+  },
+  {
+    teachId: "critter-kitchen",
+    title: "Critter Kitchen",
+  },
+  {
+    teachId: "cryptid",
+    title: "Cryptid",
+  },
+  {
+    teachId: "dead-of-winter",
+    title: "Dead of Winter: A Crossroads Game",
+  },
+  {
+    teachId: "deadly-dowagers",
+    title: "Deadly Dowagers",
+  },
+  {
+    teachId: "deep-sea-adventure",
+    title: "Deep Sea Adventure",
+  },
+  {
+    teachId: "devils-dice",
+    title: "Devil's Dice",
+  },
+  {
+    teachId: "disney-villainous",
+    title: "Disney Villainous",
+  },
+  {
+    teachId: "downforce",
+    title: "Downforce",
+  },
+  {
+    teachId: "draculas-feast",
+    title: "Dracula's Feast",
+  },
+  {
+    teachId: "dreadful-meadows",
+    title: "Dreadful Meadows",
+  },
+  {
+    teachId: "emberheart",
+    title: "Emberheart",
+  },
+  {
+    teachId: "fallout-shelter",
+    title: "Fallout Shelter",
+  },
+  {
+    teachId: "flamecraft",
+    title: "Flamecraft",
+  },
+  {
+    teachId: "forbidden-island",
+    title: "Forbidden Island",
+  },
+  {
+    teachId: "forgotten-waters",
+    title: "Forgotten Waters",
+  },
+  {
+    teachId: "formaggio",
+    title: "Formaggio",
+  },
+  {
+    teachId: "formula-d",
+    title: "Formula D",
+  },
+  {
+    teachId: "french-toast",
+    title: "French Toast",
+  },
+  {
+    teachId: "fromage",
+    title: "Fromage",
+  },
+  {
+    teachId: "galaxy-trucker",
+    title: "Galaxy Trucker",
+  },
+  {
+    teachId: "gutenberg",
+    title: "Gutenberg",
+  },
+  {
+    teachId: "girls-vs-ghouls",
+    title: "Girls vs Ghouls",
+  },
+  {
+    teachId: "hardback",
+    title: "Hardback",
+  },
+  {
+    teachId: "hearts",
+    title: "Hearts",
+  },
+  {
+    teachId: "honey-buzz",
+    title: "Honey Buzz",
+  },
+  {
+    teachId: "lets-go-to-japan",
+    title: "Let's Go! To Japan",
+  },
+  {
+    teachId: "letter-jam",
+    title: "Letter Jam",
+  },
+  {
+    teachId: "libertalia-winds-of-galecrest",
+    title: "Libertalia: Winds of Galecrest",
+  },
+  {
+    teachId: "lords-of-waterdeep",
+    title: "Lords of Waterdeep",
+  },
+  {
+    teachId: "lost-ruins-of-arnak",
+    title: "Lost Ruins of Arnak",
+  },
+  {
+    teachId: "manhattan-project",
+    title: "Manhattan Project",
+  },
+  {
+    teachId: "mariposas",
+    title: "Mariposas",
+  },
+  {
+    teachId: "marvel-champions",
+    title: "Marvel Champions",
+  },
+  {
+    teachId: "money",
+    title: "Money!",
+  },
+  {
+    teachId: "nyctophobia-vampire",
+    title: "Nyctophobia: Vampire Encounter",
+  },
+  {
+    teachId: "off-with-their-heads",
+    title: "Off With Their Heads!",
+  },
+  {
+    teachId: "paperback",
+    title: "Paperback",
+  },
+  {
+    teachId: "phantom-ink-arcana",
+    title: "Phantom Ink: Arcana",
+  },
+  {
+    teachId: "pollen",
+    title: "Pollen",
+  },
+  {
+    teachId: "ricochet-robots",
+    title: "Ricochet Robots",
+  },
+  {
+    teachId: "robinson-crusoe",
+    title: "Robinson Crusoe: Adventures on the Cursed Island",
+  },
+  {
+    teachId: "rum",
+    title: "RUM",
+  },
+  {
+    teachId: "sail",
+    title: "Sail",
+  },
+  {
+    teachId: "san-juan",
+    title: "San Juan",
+  },
+  {
+    teachId: "sandbag",
+    title: "Sandbag",
+  },
+  {
+    teachId: "shadows-over-camelot",
+    title: "Shadows over Camelot",
+  },
+  {
+    teachId: "silver-and-gold",
+    title: "Silver & Gold",
+  },
+  {
+    teachId: "stardew-valley",
+    title: "Stardew Valley: The Board Game",
+  },
+  {
+    teachId: "steam-park",
+    title: "Steam Park",
+  },
+  {
+    teachId: "surfosaurus-max",
+    title: "Surfosaurus Max",
+  },
+  {
+    teachId: "tacta",
+    title: "Tacta",
+  },
+  {
+    teachId: "targi",
+    title: "Targi",
+  },
+  {
+    teachId: "tea-garden",
+    title: "Tea Garden",
+  },
+  {
+    teachId: "tea-witches",
+    title: "Tea Witches",
+  },
+  {
+    teachId: "the-fox-experiment",
+    title: "The Fox Experiment",
+  },
+  {
+    teachId: "the-grimm-masquerade",
+    title: "The Grimm Masquerade",
+  },
+  {
+    teachId: "the-shipwreck-arcana",
+    title: "The Shipwreck Arcana",
+  },
+  {
+    teachId: "toy-battle",
+    title: "Toy Battle",
+  },
+  {
+    teachId: "tragedy-looper",
+    title: "Tragedy Looper",
+  },
+  {
+    teachId: "turing-machine",
+    title: "Turing Machine",
+  },
+  {
+    teachId: "tzolkin",
+    title: "Tzolk'in: The Mayan Calendar",
+  },
+  {
+    teachId: "vagrantsong",
+    title: "Vagrantsong",
+  },
+  {
+    teachId: "vantage",
+    title: "Vantage",
+  },
+  {
+    teachId: "vivo",
+    title: "Vivo",
+  },
+  {
+    teachId: "voyages",
+    title: "Voyages",
+  },
+  {
+    teachId: "waypoints",
+    title: "Waypoints",
+  },
+  {
+    teachId: "western-legends",
+    title: "Western Legends",
+  },
+].sort((a, b) => a.title.localeCompare(b.title));
+
+// A Map, unlike a plain object, has no inherited keys such as "constructor" to match a URL.
+export const TEACH_BY_ID = new Map(
+  TEACHES.map((teach) => [teach.teachId, teach]),
 );
-export const TEACH_BY_ID = keyBy(TEACHES, "teachId");
+
+export const loadNotes = (teachId: string) =>
+  NOTES_LOADERS[`./${teachId}.md`]();

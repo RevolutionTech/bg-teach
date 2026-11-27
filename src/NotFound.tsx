@@ -1,5 +1,3 @@
-import * as React from "react";
-
 import Header from "./molecules/Header";
 import HomeLink from "./molecules/HomeLink";
 
