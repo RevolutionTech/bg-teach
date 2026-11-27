@@ -65,8 +65,12 @@
     }
   }
 
-  li.task-list-item:has(> input:checked) {
+  li.task-list-item:has(> label > input:checked) {
     @apply opacity-45;
+  }
+
+  li.task-list-item > label {
+    @apply cursor-pointer;
   }
 
   input[type="checkbox"] {
