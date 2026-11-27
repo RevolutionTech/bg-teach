@@ -101,6 +101,10 @@ const TEACH_ENTRIES: TeachEntry[] = [
     title: "Disney Villainous",
   },
   {
+    teachId: "dont-go-in-there",
+    title: "Don't Go In There",
+  },
+  {
     teachId: "downforce",
     title: "Downforce",
   },
