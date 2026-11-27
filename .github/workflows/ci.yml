@@ -16,3 +16,12 @@ jobs:
       - run: pnpm typecheck
       - run: pnpm lint
       - run: pnpm build
+
+  deploy:
+    needs: test
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    # A called workflow cannot get more permissions than its caller, and OIDC needs id-token.
+    permissions:
+      id-token: write
+      contents: read
+    uses: ./.github/workflows/deploy.yml
