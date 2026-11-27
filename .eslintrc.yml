@@ -18,6 +18,7 @@ plugins:
 rules:
   {
     "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/no-unused-vars": ["error", { "ignoreRestSiblings": true }],
     "react/react-in-jsx-scope": "off",
   }
 settings:

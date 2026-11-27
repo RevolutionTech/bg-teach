@@ -1,16 +1,16 @@
-import * as React from "react";
-import { useParams } from "react-router-dom";
-import ReactMarkdown from "react-markdown";
+import { useEffect, useState } from "react";
+import Markdown, { type Components } from "react-markdown";
+import { useParams } from "react-router";
 import remarkGfm from "remark-gfm";
 
 import Header from "./molecules/Header";
 import HomeLink from "./molecules/HomeLink";
 import NotFound from "./NotFound";
-import { TEACH_BY_ID, TeachInfo } from "./teaches/teaches";
+import { TEACH_BY_ID, type TeachInfo } from "./teaches/teaches";
 
 const useNotes = (loadNotes: TeachInfo["loadNotes"] | undefined) => {
-  const [notes, setNotes] = React.useState<string>("");
-  React.useEffect(() => {
+  const [notes, setNotes] = useState<string>("");
+  useEffect(() => {
     if (loadNotes == null) {
       return;
     }
@@ -28,6 +28,25 @@ const useNotes = (loadNotes: TeachInfo["loadNotes"] | undefined) => {
   return notes;
 };
 
+// react-markdown passes its syntax-tree `node` to every component; it must not reach the DOM.
+const MARKDOWN_COMPONENTS: Components = {
+  h1: ({ node, ...props }) => <Header {...props} />,
+  h3: ({ node, ...props }) => <h3 className="my-2 text-xl" {...props} />,
+  ul: ({ node, className, ...props }) => (
+    <ul className={`font-light text-lg ${className ?? ""}`} {...props} />
+  ),
+  li: ({ node, className, ...props }) => (
+    <li className={`ml-4 ${className ?? ""}`} {...props} />
+  ),
+  // GFM renders task-list checkboxes as disabled; drop its props so the teacher can tick them.
+  input: ({ node, type, ...props }) =>
+    type === "checkbox" ? (
+      <input type="checkbox" className="w-5 h-5 align-text-top" />
+    ) : (
+      <input type={type} {...props} />
+    ),
+};
+
 const Teach = () => {
   const { teachId } = useParams();
   const teach = teachId == null ? undefined : TEACH_BY_ID[teachId];
@@ -39,32 +58,9 @@ const Teach = () => {
   return (
     <div className="teach">
       <HomeLink />
-      <ReactMarkdown
-        components={{
-          h1: Header,
-          h3: (props) => <h3 className="my-2 text-xl" {...props} />,
-          ul: ({ className, ...props }) => (
-            <ul className={`font-light text-lg ${className}`} {...props} />
-          ),
-          li: ({ className, ...props }) => (
-            <li className={`ml-4 ${className}`} {...props} />
-          ),
-          input: ({
-            type,
-            ...props
-          }: React.InputHTMLAttributes<HTMLInputElement>) => (
-            <input
-              type={type}
-              {...(type === "checkbox"
-                ? { className: "w-5 h-5 align-text-top" }
-                : props)}
-            />
-          ),
-        }}
-        remarkPlugins={[remarkGfm]}
-      >
+      <Markdown components={MARKDOWN_COMPONENTS} remarkPlugins={[remarkGfm]}>
         {markdown}
-      </ReactMarkdown>
+      </Markdown>
     </div>
   );
 };

@@ -1,6 +1,6 @@
-import * as React from "react";
+import type { HTMLAttributes } from "react";
 
-const Header = (props: React.HTMLAttributes<HTMLHeadingElement>) => (
+const Header = (props: HTMLAttributes<HTMLHeadingElement>) => (
   <h1 className="my-4 text-3xl" {...props} />
 );
 

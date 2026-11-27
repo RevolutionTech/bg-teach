@@ -1,5 +1,4 @@
-import * as React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router";
 
 import NotFound from "./NotFound";
 import TableOfContents from "./TableOfContents";
