@@ -1,90 +1,9 @@
 import { keyBy, sortBy } from "lodash";
 
-import FiftyFirstState from "url:./51st-state.md";
-import AllInPredictions from "url:./all-in-predictions.md";
-import Atiwa from "url:./atiwa.md";
-import Bacon from "url:./bacon.md";
-import BangTheDiceGame from "url:./bang-the-dice-game.md";
-import CafeBaras from "url:./cafe-baras.md";
-import Calico from "url:./calico.md";
-import CaptainSonar from "url:./captain-sonar.md";
-import Cartographers from "url:./cartographers.md";
-import CastlesOfBurgundy from "url:./castles-of-burgundy.md";
-import ClankInSpace from "url:./clank-in-space.md";
-import ColtExpress from "url:./colt-express.md";
-import CosmicEncounter from "url:./cosmic-encounter.md";
-import CritterKitchen from "url:./critter-kitchen.md";
-import Cryptid from "url:./cryptid.md";
-import DeadOfWinter from "url:./dead-of-winter.md";
-import DeadlyDowagers from "url:./deadly-dowagers.md";
-import DeepSeaAdventure from "url:./deep-sea-adventure.md";
-import DevilsDice from "url:./devils-dice.md";
-import DisneyVillainous from "url:./disney-villainous.md";
-import Downforce from "url:./downforce.md";
-import DraculasFeast from "url:./draculas-feast.md";
-import DreadfulMeadows from "url:./dreadful-meadows.md";
-import Emberheart from "url:./emberheart.md";
-import FalloutShelter from "url:./fallout-shelter.md";
-import Flamecraft from "url:./flamecraft.md";
-import ForbiddenIsland from "url:./forbidden-island.md";
-import ForgottenWaters from "url:./forgotten-waters.md";
-import Formaggio from "url:./formaggio.md";
-import FormulaD from "url:./formula-d.md";
-import FrenchToast from "url:./french-toast.md";
-import Fromage from "url:./fromage.md";
-import GalaxyTrucker from "url:./galaxy-trucker.md";
-import Gutenberg from "url:./gutenberg.md";
-import GirlsVsGhouls from "url:./girls-vs-ghouls.md";
-import Hardback from "url:./hardback.md";
-import Hearts from "url:./hearts.md";
-import HoneyBuzz from "url:./honey-buzz.md";
-import LetsGoToJapan from "url:./lets-go-to-japan.md";
-import LetterJam from "url:./letter-jam.md";
-import LibertaliaWindsOfGalecrest from "url:./libertalia-winds-of-galecrest.md";
-import LordsOfWaterdeep from "url:./lords-of-waterdeep.md";
-import LostRuinsOfArnak from "url:./lost-ruins-of-arnak.md";
-import ManhattanProject from "url:./manhattan-project.md";
-import Mariposas from "url:./mariposas.md";
-import MarvelChampions from "url:./marvel-champions.md";
-import Money from "url:./money.md";
-import NyctophobiaVampire from "url:./nyctophobia-vampire.md";
-import OffWithTheirHeads from "url:./off-with-their-heads.md";
-import Paperback from "url:./paperback.md";
-import PhantomInkArcana from "url:./phantom-ink-arcana.md";
-import Pollen from "url:./pollen.md";
-import RicochetRobots from "url:./ricochet-robots.md";
-import RobinsonCrusoe from "url:./robinson-crusoe.md";
-import Rum from "url:./rum.md";
-import Sail from "url:./sail.md";
-import SanJuan from "url:./san-juan.md";
-import Sandbag from "url:./sandbag.md";
-import ShadowsOverCamelot from "url:./shadows-over-camelot.md";
-import SilverAndGold from "url:./silver-and-gold.md";
-import StardewValley from "url:./stardew-valley.md";
-import SteamPark from "url:./steam-park.md";
-import SurfosaurusMax from "url:./surfosaurus-max.md";
-import Tacta from "url:./tacta.md";
-import Targi from "url:./targi.md";
-import TeaGarden from "url:./tea-garden.md";
-import TeaWitches from "url:./tea-witches.md";
-import TheFoxExperiment from "url:./the-fox-experiment.md";
-import TheGrimmMasquerade from "url:./the-grimm-masquerade.md";
-import TheShipwreckArcana from "url:./the-shipwreck-arcana.md";
-import ToyBattle from "url:./toy-battle.md";
-import TragedyLooper from "url:./tragedy-looper.md";
-import TuringMachine from "url:./turing-machine.md";
-import Tzolkin from "url:./tzolkin.md";
-import Vagrantsong from "url:./vagrantsong.md";
-import Vantage from "url:./vantage.md";
-import Vivo from "url:./vivo.md";
-import Voyages from "url:./voyages.md";
-import Waypoints from "url:./waypoints.md";
-import WesternLegends from "url:./western-legends.md";
-
 export interface TeachInfo {
   teachId: string;
   title: string;
-  notes: string;
+  loadNotes: () => Promise<{ default: string }>;
 }
 
 export const TEACHES: TeachInfo[] = sortBy(
@@ -92,402 +11,402 @@ export const TEACHES: TeachInfo[] = sortBy(
     {
       teachId: "51st-state",
       title: "51st State",
-      notes: FiftyFirstState,
+      loadNotes: () => import("./51st-state.md?raw"),
     },
     {
       teachId: "all-in-predictions",
       title: "All In: Predictions",
-      notes: AllInPredictions,
+      loadNotes: () => import("./all-in-predictions.md?raw"),
     },
     {
       teachId: "atiwa",
       title: "Atiwa",
-      notes: Atiwa,
+      loadNotes: () => import("./atiwa.md?raw"),
     },
     {
       teachId: "bacon",
       title: "Bacon",
-      notes: Bacon,
+      loadNotes: () => import("./bacon.md?raw"),
     },
     {
       teachId: "bang-the-dice-game",
       title: "Bang! The Dice Game",
-      notes: BangTheDiceGame,
+      loadNotes: () => import("./bang-the-dice-game.md?raw"),
     },
     {
       teachId: "cafe-baras",
       title: "Café Baras",
-      notes: CafeBaras,
+      loadNotes: () => import("./cafe-baras.md?raw"),
     },
     {
       teachId: "calico",
       title: "Calico",
-      notes: Calico,
+      loadNotes: () => import("./calico.md?raw"),
     },
     {
       teachId: "captain-sonar",
       title: "Captain Sonar",
-      notes: CaptainSonar,
+      loadNotes: () => import("./captain-sonar.md?raw"),
     },
     {
       teachId: "cartographers",
       title: "Cartographers",
-      notes: Cartographers,
+      loadNotes: () => import("./cartographers.md?raw"),
     },
     {
       teachId: "castles-of-burgundy",
       title: "Castles of Burgundy",
-      notes: CastlesOfBurgundy,
+      loadNotes: () => import("./castles-of-burgundy.md?raw"),
     },
     {
       teachId: "clank-in-space",
       title: "Clank! In! Space!",
-      notes: ClankInSpace,
+      loadNotes: () => import("./clank-in-space.md?raw"),
     },
     {
       teachId: "colt-express",
       title: "Colt Express",
-      notes: ColtExpress,
+      loadNotes: () => import("./colt-express.md?raw"),
     },
     {
       teachId: "cosmic-encounter",
       title: "Cosmic Encounter",
-      notes: CosmicEncounter,
+      loadNotes: () => import("./cosmic-encounter.md?raw"),
     },
     {
       teachId: "critter-kitchen",
       title: "Critter Kitchen",
-      notes: CritterKitchen,
+      loadNotes: () => import("./critter-kitchen.md?raw"),
     },
     {
       teachId: "cryptid",
       title: "Cryptid",
-      notes: Cryptid,
+      loadNotes: () => import("./cryptid.md?raw"),
     },
     {
       teachId: "dead-of-winter",
       title: "Dead of Winter: A Crossroads Game",
-      notes: DeadOfWinter,
+      loadNotes: () => import("./dead-of-winter.md?raw"),
     },
     {
       teachId: "deadly-dowagers",
       title: "Deadly Dowagers",
-      notes: DeadlyDowagers,
+      loadNotes: () => import("./deadly-dowagers.md?raw"),
     },
     {
       teachId: "deep-sea-adventure",
       title: "Deep Sea Adventure",
-      notes: DeepSeaAdventure,
+      loadNotes: () => import("./deep-sea-adventure.md?raw"),
     },
     {
       teachId: "devils-dice",
       title: "Devil's Dice",
-      notes: DevilsDice,
+      loadNotes: () => import("./devils-dice.md?raw"),
     },
     {
       teachId: "disney-villainous",
       title: "Disney Villainous",
-      notes: DisneyVillainous,
+      loadNotes: () => import("./disney-villainous.md?raw"),
     },
     {
       teachId: "downforce",
       title: "Downforce",
-      notes: Downforce,
+      loadNotes: () => import("./downforce.md?raw"),
     },
     {
       teachId: "draculas-feast",
       title: "Dracula's Feast",
-      notes: DraculasFeast,
+      loadNotes: () => import("./draculas-feast.md?raw"),
     },
     {
       teachId: "dreadful-meadows",
       title: "Dreadful Meadows",
-      notes: DreadfulMeadows,
+      loadNotes: () => import("./dreadful-meadows.md?raw"),
     },
     {
       teachId: "emberheart",
       title: "Emberheart",
-      notes: Emberheart,
+      loadNotes: () => import("./emberheart.md?raw"),
     },
     {
       teachId: "fallout-shelter",
       title: "Fallout Shelter",
-      notes: FalloutShelter,
+      loadNotes: () => import("./fallout-shelter.md?raw"),
     },
     {
       teachId: "flamecraft",
       title: "Flamecraft",
-      notes: Flamecraft,
+      loadNotes: () => import("./flamecraft.md?raw"),
     },
     {
       teachId: "forbidden-island",
       title: "Forbidden Island",
-      notes: ForbiddenIsland,
+      loadNotes: () => import("./forbidden-island.md?raw"),
     },
     {
       teachId: "forgotten-waters",
       title: "Forgotten Waters",
-      notes: ForgottenWaters,
+      loadNotes: () => import("./forgotten-waters.md?raw"),
     },
     {
       teachId: "formaggio",
       title: "Formaggio",
-      notes: Formaggio,
+      loadNotes: () => import("./formaggio.md?raw"),
     },
     {
       teachId: "formula-d",
       title: "Formula D",
-      notes: FormulaD,
+      loadNotes: () => import("./formula-d.md?raw"),
     },
     {
       teachId: "french-toast",
       title: "French Toast",
-      notes: FrenchToast,
+      loadNotes: () => import("./french-toast.md?raw"),
     },
     {
       teachId: "fromage",
       title: "Fromage",
-      notes: Fromage,
+      loadNotes: () => import("./fromage.md?raw"),
     },
     {
       teachId: "galaxy-trucker",
       title: "Galaxy Trucker",
-      notes: GalaxyTrucker,
+      loadNotes: () => import("./galaxy-trucker.md?raw"),
     },
     {
       teachId: "gutenberg",
       title: "Gutenberg",
-      notes: Gutenberg,
+      loadNotes: () => import("./gutenberg.md?raw"),
     },
     {
       teachId: "girls-vs-ghouls",
       title: "Girls vs Ghouls",
-      notes: GirlsVsGhouls,
+      loadNotes: () => import("./girls-vs-ghouls.md?raw"),
     },
     {
       teachId: "hardback",
       title: "Hardback",
-      notes: Hardback,
+      loadNotes: () => import("./hardback.md?raw"),
     },
     {
       teachId: "hearts",
       title: "Hearts",
-      notes: Hearts,
+      loadNotes: () => import("./hearts.md?raw"),
     },
     {
       teachId: "honey-buzz",
       title: "Honey Buzz",
-      notes: HoneyBuzz,
+      loadNotes: () => import("./honey-buzz.md?raw"),
     },
     {
       teachId: "lets-go-to-japan",
       title: "Let's Go! To Japan",
-      notes: LetsGoToJapan,
+      loadNotes: () => import("./lets-go-to-japan.md?raw"),
     },
     {
       teachId: "letter-jam",
       title: "Letter Jam",
-      notes: LetterJam,
+      loadNotes: () => import("./letter-jam.md?raw"),
     },
     {
       teachId: "liberalia-winds-of-galecrest",
       title: "Libertalia: Winds of Galecrest",
-      notes: LibertaliaWindsOfGalecrest,
+      loadNotes: () => import("./libertalia-winds-of-galecrest.md?raw"),
     },
     {
       teachId: "lords-of-waterdeep",
       title: "Lords of Waterdeep",
-      notes: LordsOfWaterdeep,
+      loadNotes: () => import("./lords-of-waterdeep.md?raw"),
     },
     {
       teachId: "lost-ruins-of-arnak",
       title: "Lost Ruins of Arnak",
-      notes: LostRuinsOfArnak,
+      loadNotes: () => import("./lost-ruins-of-arnak.md?raw"),
     },
     {
       teachId: "manhattan-project",
       title: "Manhattan Project",
-      notes: ManhattanProject,
+      loadNotes: () => import("./manhattan-project.md?raw"),
     },
     {
       teachId: "mariposas",
       title: "Mariposas",
-      notes: Mariposas,
+      loadNotes: () => import("./mariposas.md?raw"),
     },
     {
       teachId: "marvel-champions",
       title: "Marvel Champions",
-      notes: MarvelChampions,
+      loadNotes: () => import("./marvel-champions.md?raw"),
     },
     {
       teachId: "money",
       title: "Money!",
-      notes: Money,
+      loadNotes: () => import("./money.md?raw"),
     },
     {
       teachId: "nyctophobia-vampire",
       title: "Nyctophobia: Vampire Encounter",
-      notes: NyctophobiaVampire,
+      loadNotes: () => import("./nyctophobia-vampire.md?raw"),
     },
     {
       teachId: "off-with-their-heads",
       title: "Off With Their Heads!",
-      notes: OffWithTheirHeads,
+      loadNotes: () => import("./off-with-their-heads.md?raw"),
     },
     {
       teachId: "paperback",
       title: "Paperback",
-      notes: Paperback,
+      loadNotes: () => import("./paperback.md?raw"),
     },
     {
       teachId: "phantom-ink-arcana",
       title: "Phantom Ink: Arcana",
-      notes: PhantomInkArcana,
+      loadNotes: () => import("./phantom-ink-arcana.md?raw"),
     },
     {
       teachId: "pollen",
       title: "Pollen",
-      notes: Pollen,
+      loadNotes: () => import("./pollen.md?raw"),
     },
     {
       teachId: "ricochet-robots",
       title: "Ricochet Robots",
-      notes: RicochetRobots,
+      loadNotes: () => import("./ricochet-robots.md?raw"),
     },
     {
       teachId: "robinson-crusoe",
       title: "Robinson Crusoe: Adventures on the Cursed Island",
-      notes: RobinsonCrusoe,
+      loadNotes: () => import("./robinson-crusoe.md?raw"),
     },
     {
       teachId: "rum",
       title: "RUM",
-      notes: Rum,
+      loadNotes: () => import("./rum.md?raw"),
     },
     {
       teachId: "sail",
       title: "Sail",
-      notes: Sail,
+      loadNotes: () => import("./sail.md?raw"),
     },
     {
       teachId: "san-juan",
       title: "San Juan",
-      notes: SanJuan,
+      loadNotes: () => import("./san-juan.md?raw"),
     },
     {
       teachId: "sandbag",
       title: "Sandbag",
-      notes: Sandbag,
+      loadNotes: () => import("./sandbag.md?raw"),
     },
     {
       teachId: "shadows-over-camelot",
       title: "Shadows over Camelot",
-      notes: ShadowsOverCamelot,
+      loadNotes: () => import("./shadows-over-camelot.md?raw"),
     },
     {
       teachId: "silver-and-gold",
       title: "Silver & Gold",
-      notes: SilverAndGold,
+      loadNotes: () => import("./silver-and-gold.md?raw"),
     },
     {
       teachId: "stardew-valley",
       title: "Stardew Valley: The Board Game",
-      notes: StardewValley,
+      loadNotes: () => import("./stardew-valley.md?raw"),
     },
     {
       teachId: "steam-park",
       title: "Steam Park",
-      notes: SteamPark,
+      loadNotes: () => import("./steam-park.md?raw"),
     },
     {
       teachId: "surfosaurus-max",
       title: "Surfosaurus Max",
-      notes: SurfosaurusMax,
+      loadNotes: () => import("./surfosaurus-max.md?raw"),
     },
     {
       teachId: "tacta",
       title: "Tacta",
-      notes: Tacta,
+      loadNotes: () => import("./tacta.md?raw"),
     },
     {
       teachId: "targi",
       title: "Targi",
-      notes: Targi,
+      loadNotes: () => import("./targi.md?raw"),
     },
     {
       teachId: "tea-garden",
       title: "Tea Garden",
-      notes: TeaGarden,
+      loadNotes: () => import("./tea-garden.md?raw"),
     },
     {
       teachId: "tea-witches",
       title: "Tea Witches",
-      notes: TeaWitches,
+      loadNotes: () => import("./tea-witches.md?raw"),
     },
     {
       teachId: "the-fox-experiment",
       title: "The Fox Experiment",
-      notes: TheFoxExperiment,
+      loadNotes: () => import("./the-fox-experiment.md?raw"),
     },
     {
       teachId: "the-grimm-masquerade",
       title: "The Grimm Masquerade",
-      notes: TheGrimmMasquerade,
+      loadNotes: () => import("./the-grimm-masquerade.md?raw"),
     },
     {
       teachId: "the-shipwreck-arcana",
       title: "The Shipwreck Arcana",
-      notes: TheShipwreckArcana,
+      loadNotes: () => import("./the-shipwreck-arcana.md?raw"),
     },
     {
       teachId: "toy-battle",
       title: "Toy Battle",
-      notes: ToyBattle,
+      loadNotes: () => import("./toy-battle.md?raw"),
     },
     {
       teachId: "tragedy-looper",
       title: "Tragedy Looper",
-      notes: TragedyLooper,
+      loadNotes: () => import("./tragedy-looper.md?raw"),
     },
     {
       teachId: "turing-machine",
       title: "Turing Machine",
-      notes: TuringMachine,
+      loadNotes: () => import("./turing-machine.md?raw"),
     },
     {
       teachId: "tzolkin",
       title: "Tzolk'in: The Mayan Calendar",
-      notes: Tzolkin,
+      loadNotes: () => import("./tzolkin.md?raw"),
     },
     {
       teachId: "vagrantsong",
       title: "Vagrantsong",
-      notes: Vagrantsong,
+      loadNotes: () => import("./vagrantsong.md?raw"),
     },
     {
       teachId: "vantage",
       title: "Vantage",
-      notes: Vantage,
+      loadNotes: () => import("./vantage.md?raw"),
     },
     {
       teachId: "vivo",
       title: "Vivo",
-      notes: Vivo,
+      loadNotes: () => import("./vivo.md?raw"),
     },
     {
       teachId: "voyages",
       title: "Voyages",
-      notes: Voyages,
+      loadNotes: () => import("./voyages.md?raw"),
     },
     {
       teachId: "waypoints",
       title: "Waypoints",
-      notes: Waypoints,
+      loadNotes: () => import("./waypoints.md?raw"),
     },
     {
       teachId: "western-legends",
       title: "Western Legends",
-      notes: WesternLegends,
+      loadNotes: () => import("./western-legends.md?raw"),
     },
   ],
   "title",

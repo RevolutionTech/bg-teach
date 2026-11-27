@@ -6,14 +6,14 @@
     "node": ">=26"
   },
   "scripts": {
-    "clean": "rimraf .parcel-cache dist",
-    "start": "parcel src/index.html",
-    "build": "parcel build src/index.html",
+    "clean": "rm -rf dist",
+    "start": "vite",
+    "build": "vite build",
     "typecheck": "tsc --noemit",
     "lint": "eslint . --ext .ts,.tsx",
-    "lint:fix": "eslint --fix . --ext .ts,.tsx"
+    "lint:fix": "eslint --fix . --ext .ts,.tsx",
+    "preview": "vite preview"
   },
-  "browserslist": "defaults and supports async-functions",
   "dependencies": {
     "lodash": "^4.17.21",
     "react": "^18.2.0",
@@ -29,13 +29,13 @@
     "@types/react-dom": "^18.0.5",
     "@typescript-eslint/eslint-plugin": "^5.29.0",
     "@typescript-eslint/parser": "^5.29.0",
+    "@vitejs/plugin-react": "^6.3.0",
     "autoprefixer": "^10.4.0",
     "eslint": "^8.18.0",
     "eslint-plugin-react": "^7.30.1",
-    "parcel": "^2.6.2",
     "postcss": "^8.4.14",
     "prettier": "^2.5.1",
-    "process": "^0.11.10",
-    "typescript": "^4.7.4"
+    "typescript": "^4.7.4",
+    "vite": "^8.4.0"
   }
 }

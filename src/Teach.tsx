@@ -6,25 +6,32 @@ import remarkGfm from "remark-gfm";
 import Header from "./molecules/Header";
 import HomeLink from "./molecules/HomeLink";
 import NotFound from "./NotFound";
-import { TEACH_BY_ID } from "./teaches/teaches";
+import { TEACH_BY_ID, TeachInfo } from "./teaches/teaches";
 
-const useMarkdownString = (url: string | undefined) => {
-  const [markdown, setMarkdown] = React.useState<string>("");
+const useNotes = (loadNotes: TeachInfo["loadNotes"] | undefined) => {
+  const [notes, setNotes] = React.useState<string>("");
   React.useEffect(() => {
-    if (url == null) {
+    if (loadNotes == null) {
       return;
     }
-    fetch(url)
-      .then((res) => res.text())
-      .then((md) => setMarkdown(md));
-  }, [url, setMarkdown]);
-  return markdown;
+    // Navigating between teaches can resolve loads out of order.
+    let isCurrent = true;
+    loadNotes().then((module) => {
+      if (isCurrent) {
+        setNotes(module.default);
+      }
+    });
+    return () => {
+      isCurrent = false;
+    };
+  }, [loadNotes]);
+  return notes;
 };
 
 const Teach = () => {
   const { teachId } = useParams();
   const teach = teachId == null ? undefined : TEACH_BY_ID[teachId];
-  const markdown = useMarkdownString(teach?.notes);
+  const markdown = useNotes(teach?.loadNotes);
   if (teach == null) {
     return <NotFound />;
   }
