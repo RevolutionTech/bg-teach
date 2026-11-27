@@ -1,5 +1,7 @@
 name: Deploy
-on: workflow_dispatch
+on:
+  workflow_call:
+  workflow_dispatch:
 permissions:
   id-token: write
   contents: read
@@ -8,6 +10,10 @@ jobs:
   deploy:
     runs-on: ubuntu-22.04
     environment: prod
+    # Parallel runs of `s3 sync --delete` can leave a mix of old and new files.
+    concurrency:
+      group: deploy-prod
+      cancel-in-progress: false
     steps:
       - uses: actions/checkout@v2
       - uses: pnpm/action-setup@v6
