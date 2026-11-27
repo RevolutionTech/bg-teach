@@ -19,11 +19,6 @@ moved {
 }
 
 moved {
-  from = module.simple-static-website.aws_cloudfront_origin_access_identity.static_website
-  to   = aws_cloudfront_origin_access_identity.static_website
-}
-
-moved {
   from = module.simple-static-website.aws_cloudfront_distribution.static_website
   to   = aws_cloudfront_distribution.static_website
 }
@@ -36,9 +31,4 @@ moved {
 moved {
   from = module.simple-static-website.aws_s3_bucket_policy.static_website_read
   to   = aws_s3_bucket_policy.static_website_read
-}
-
-moved {
-  from = module.simple-static-website.aws_s3_bucket_website_configuration.static_website
-  to   = aws_s3_bucket_website_configuration.static_website
 }
