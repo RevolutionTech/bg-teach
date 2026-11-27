@@ -6,25 +6,25 @@ import remarkGfm from "remark-gfm";
 import Header from "./molecules/Header";
 import HomeLink from "./molecules/HomeLink";
 import NotFound from "./NotFound";
-import { TEACH_BY_ID, type TeachInfo } from "./teaches/teaches";
+import { loadNotes, TEACH_BY_ID } from "./teaches/teaches";
 
-const useNotes = (loadNotes: TeachInfo["loadNotes"] | undefined) => {
+const useNotes = (teachId: string | undefined) => {
   const [notes, setNotes] = useState<string>("");
   useEffect(() => {
-    if (loadNotes == null) {
+    if (teachId == null) {
       return;
     }
     // Navigating between teaches can resolve loads out of order.
     let isCurrent = true;
-    loadNotes().then((module) => {
+    loadNotes(teachId).then((loadedNotes) => {
       if (isCurrent) {
-        setNotes(module.default);
+        setNotes(loadedNotes);
       }
     });
     return () => {
       isCurrent = false;
     };
-  }, [loadNotes]);
+  }, [teachId]);
   return notes;
 };
 
@@ -50,7 +50,7 @@ const MARKDOWN_COMPONENTS: Components = {
 const Teach = () => {
   const { teachId } = useParams();
   const teach = teachId == null ? undefined : TEACH_BY_ID.get(teachId);
-  const markdown = useNotes(teach?.loadNotes);
+  const markdown = useNotes(teach?.teachId);
   if (teach == null) {
     return <NotFound />;
   }
