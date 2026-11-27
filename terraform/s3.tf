@@ -4,6 +4,15 @@ resource "aws_s3_bucket" "static_website" {
   tags = local.tags
 }
 
+resource "aws_s3_bucket_public_access_block" "static_website" {
+  bucket = aws_s3_bucket.static_website.id
+
+  block_public_acls       = true
+  block_public_policy     = true
+  ignore_public_acls      = true
+  restrict_public_buckets = true
+}
+
 resource "aws_s3_bucket_policy" "static_website_read" {
   bucket = local.domain_name
   policy = jsonencode({
@@ -21,28 +30,7 @@ resource "aws_s3_bucket_policy" "static_website_read" {
             "AWS:SourceArn" = aws_cloudfront_distribution.static_website.arn
           }
         }
-      },
-      # Edge locations keep using the OAI until the distribution change
-      # finishes deploying, so the bucket must trust both until then.
-      {
-        Action   = "s3:GetObject"
-        Effect   = "Allow"
-        Resource = "${aws_s3_bucket.static_website.arn}/*"
-        Principal = {
-          AWS = aws_cloudfront_origin_access_identity.static_website.iam_arn
-        }
       }
     ]
   })
-}
-
-resource "aws_s3_bucket_website_configuration" "static_website" {
-  bucket = local.domain_name
-
-  index_document {
-    suffix = "index.html"
-  }
-  error_document {
-    key = local.error_page
-  }
 }

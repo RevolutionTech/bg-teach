@@ -5,10 +5,6 @@ resource "aws_acm_certificate" "static_website" {
   tags = local.tags
 }
 
-resource "aws_cloudfront_origin_access_identity" "static_website" {
-  comment = "OAI for ${local.domain_name}"
-}
-
 resource "aws_cloudfront_origin_access_control" "static_website" {
   name                              = local.domain_name
   origin_access_control_origin_type = "s3"
@@ -28,7 +24,7 @@ resource "aws_cloudfront_distribution" "static_website" {
   custom_error_response {
     error_code         = 403
     response_code      = 404
-    response_page_path = "/${local.error_page}"
+    response_page_path = "/index.html"
   }
   default_cache_behavior {
     allowed_methods        = ["GET", "HEAD"]
