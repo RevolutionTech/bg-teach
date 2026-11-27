@@ -51,6 +51,60 @@ test("lets the teacher tick and untick a checklist item", async ({ page }) => {
   await expect(checkbox).not.toBeChecked();
 });
 
+test("lets the teacher tick and untick a checklist item by clicking its text", async ({
+  page,
+}) => {
+  await page.goto("/teach/calico");
+  const notes = page.getByTestId("teach-notes");
+  const checkbox = notes.getByRole("checkbox", { name: "Theme & vibe" });
+
+  await notes.getByText("Theme & vibe").click();
+  await expect(checkbox).toBeChecked();
+
+  await notes.getByText("Theme & vibe").click();
+  await expect(checkbox).not.toBeChecked();
+});
+
+test("ticks only the parent item when its text is clicked", async ({
+  page,
+}) => {
+  await page.goto("/teach/calico");
+  const notes = page.getByTestId("teach-notes");
+  const parentCheckbox = notes.getByRole("checkbox", {
+    name: "Design goals",
+    exact: true,
+  });
+  const childCheckbox = notes.getByRole("checkbox", {
+    name: "Applies to the six tiles surrounding the design goal tile",
+    exact: true,
+  });
+
+  await notes.getByText("Design goals", { exact: true }).click();
+
+  await expect(parentCheckbox).toBeChecked();
+  await expect(childCheckbox).not.toBeChecked();
+});
+
+test("ticks only the child item when its text is clicked", async ({ page }) => {
+  await page.goto("/teach/calico");
+  const notes = page.getByTestId("teach-notes");
+  const parentCheckbox = notes.getByRole("checkbox", {
+    name: "Design goals",
+    exact: true,
+  });
+  const childCheckbox = notes.getByRole("checkbox", {
+    name: "Applies to the six tiles surrounding the design goal tile",
+    exact: true,
+  });
+
+  await notes
+    .getByText("Applies to the six tiles surrounding the design goal tile")
+    .click();
+
+  await expect(childCheckbox).toBeChecked();
+  await expect(parentCheckbox).not.toBeChecked();
+});
+
 test("goes back to the table of contents", async ({ page }) => {
   await page.goto("/teach/calico");
 

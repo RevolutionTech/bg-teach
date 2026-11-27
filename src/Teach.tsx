@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { Children, isValidElement, useEffect, useState } from "react";
 import Markdown, { type Components } from "react-markdown";
 import { useParams } from "react-router";
 import remarkGfm from "remark-gfm";
@@ -40,6 +40,27 @@ const MARKDOWN_COMPONENTS: Components = {
     ) : (
       <input type={type} {...props} />
     ),
+  // Wrapping the item's own content in a label makes its text toggle the checkbox. Nested lists stay
+  // outside the label so that clicking a child item does not also toggle its parent.
+  li: ({ node, className, children, ...props }) => {
+    if (!className?.includes("task-list-item")) {
+      return (
+        <li className={className} {...props}>
+          {children}
+        </li>
+      );
+    }
+    const childNodes = Children.toArray(children);
+    const isNestedList = (child: unknown) =>
+      isValidElement(child) && (child.type === "ul" || child.type === "ol");
+    return (
+      <li className={className} {...props}>
+        {/* biome-ignore lint/a11y/noLabelWithoutControl: GFM puts the checkbox inside the item's children. */}
+        <label>{childNodes.filter((child) => !isNestedList(child))}</label>
+        {childNodes.filter(isNestedList)}
+      </li>
+    );
+  },
 };
 
 const Teach = () => {
