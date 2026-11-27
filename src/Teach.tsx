@@ -49,7 +49,7 @@ const MARKDOWN_COMPONENTS: Components = {
 
 const Teach = () => {
   const { teachId } = useParams();
-  const teach = teachId == null ? undefined : TEACH_BY_ID[teachId];
+  const teach = teachId == null ? undefined : TEACH_BY_ID.get(teachId);
   const markdown = useNotes(teach?.loadNotes);
   if (teach == null) {
     return <NotFound />;
