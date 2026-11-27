@@ -2,6 +2,9 @@
   "name": "bg-teach",
   "version": "1.0.0",
   "license": "ISC",
+  "engines": {
+    "node": ">=26"
+  },
   "scripts": {
     "clean": "rimraf .parcel-cache dist",
     "start": "parcel src/index.html",

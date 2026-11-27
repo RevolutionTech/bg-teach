@@ -8,9 +8,12 @@ import HomeLink from "./molecules/HomeLink";
 import NotFound from "./NotFound";
 import { TEACH_BY_ID } from "./teaches/teaches";
 
-const useMarkdownString = (url: string) => {
+const useMarkdownString = (url: string | undefined) => {
   const [markdown, setMarkdown] = React.useState<string>("");
   React.useEffect(() => {
+    if (url == null) {
+      return;
+    }
     fetch(url)
       .then((res) => res.text())
       .then((md) => setMarkdown(md));
@@ -20,15 +23,12 @@ const useMarkdownString = (url: string) => {
 
 const Teach = () => {
   const { teachId } = useParams();
-  if (teachId == null) {
-    return <NotFound />;
-  }
-  const teach = TEACH_BY_ID[teachId];
+  const teach = teachId == null ? undefined : TEACH_BY_ID[teachId];
+  const markdown = useMarkdownString(teach?.notes);
   if (teach == null) {
     return <NotFound />;
   }
 
-  const markdown = useMarkdownString(teach.notes);
   return (
     <div className="teach">
       <HomeLink />
@@ -54,7 +54,7 @@ const Teach = () => {
             />
           ),
         }}
-        rehypePlugins={[remarkGfm]}
+        remarkPlugins={[remarkGfm]}
       >
         {markdown}
       </ReactMarkdown>

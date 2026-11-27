@@ -10,7 +10,11 @@ jobs:
     environment: prod
     steps:
       - uses: actions/checkout@v2
-      - run: yarn install
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: yarn
+      - run: yarn install --frozen-lockfile
 
       - run: yarn build
       - uses: aws-actions/configure-aws-credentials@v3.0.1
