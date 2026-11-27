@@ -121,6 +121,10 @@ const TEACH_ENTRIES: TeachEntry[] = [
     title: "Fallout Shelter",
   },
   {
+    teachId: "fantastic-factories",
+    title: "Fantastic Factories",
+  },
+  {
     teachId: "flamecraft",
     title: "Flamecraft",
   },
