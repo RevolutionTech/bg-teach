@@ -1,13 +1,75 @@
-@import url("https://fonts.googleapis.com/css2?family=Anek+Latin:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anek+Latin:wght@300;400;600;700&display=swap");
 @import "tailwindcss";
 
+/* Colors come from the logo. `accent` is darker than the logo's teal so that link text has enough contrast. */
+@theme {
+  --font-sans: "Anek Latin", system-ui, sans-serif;
+  --color-ink: #35465a;
+  --color-ink-muted: #627184;
+  --color-accent: #137d6c;
+  --color-accent-bright: #22aa93;
+  --color-paper: #f6f4ef;
+  --color-card: #ffffff;
+  --color-line: #e2ddd3;
+}
+
 @layer base {
-  html {
-    font-family: "Anek Latin", system-ui, sans-serif;
+  body {
+    @apply bg-paper text-ink;
   }
 }
 
-/* Unlayered so it beats the `ml-4` utility, which Tailwind puts in a higher cascade layer than `base`. */
-.teach > ul > li.ml-4 {
-  margin-left: auto;
+/* Teach notes come from Markdown, which has no class names, so they are styled by element here. */
+.teach-notes {
+  @apply text-lg font-light;
+
+  h2,
+  h3 {
+    @apply mt-8 mb-3 border-b-2 border-accent-bright/40 pb-1 text-2xl font-semibold first:mt-0;
+  }
+
+  h4 {
+    @apply mt-5 mb-2 text-xl font-semibold;
+  }
+
+  p {
+    @apply my-3;
+  }
+
+  strong {
+    @apply font-semibold;
+  }
+
+  ul ul,
+  ul ol,
+  ol ul,
+  ol ol {
+    @apply ml-7;
+  }
+
+  ol {
+    @apply list-decimal pl-6;
+  }
+
+  li {
+    @apply my-1;
+  }
+
+  /* A hanging indent keeps wrapped lines aligned with the text after the checkbox. */
+  li.task-list-item {
+    @apply pl-7 -indent-7 transition-opacity;
+
+    > ul,
+    > ol {
+      @apply ml-0 indent-0;
+    }
+  }
+
+  li.task-list-item:has(> input:checked) {
+    @apply opacity-45;
+  }
+
+  input[type="checkbox"] {
+    @apply mr-2 h-5 w-5 cursor-pointer align-text-top accent-accent;
+  }
 }

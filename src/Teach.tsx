@@ -5,6 +5,7 @@ import remarkGfm from "remark-gfm";
 
 import Header from "./molecules/Header";
 import HomeLink from "./molecules/HomeLink";
+import Thumbnail from "./molecules/Thumbnail";
 import NotFound from "./NotFound";
 import { loadNotes, TEACH_BY_ID } from "./teaches/teaches";
 
@@ -30,18 +31,12 @@ const useNotes = (teachId: string | undefined) => {
 
 // react-markdown passes its syntax-tree `node` to every component; it must not reach the DOM.
 const MARKDOWN_COMPONENTS: Components = {
-  h1: ({ node, ...props }) => <Header {...props} />,
-  h3: ({ node, ...props }) => <h3 className="my-2 text-xl" {...props} />,
-  ul: ({ node, className, ...props }) => (
-    <ul className={`font-light text-lg ${className ?? ""}`} {...props} />
-  ),
-  li: ({ node, className, ...props }) => (
-    <li className={`ml-4 ${className ?? ""}`} {...props} />
-  ),
+  // The page shows the title next to the thumbnail, so the Markdown `#` heading is not shown again.
+  h1: () => null,
   // GFM renders task-list checkboxes as disabled; drop its props so the teacher can tick them.
   input: ({ node, type, ...props }) =>
     type === "checkbox" ? (
-      <input type="checkbox" className="w-5 h-5 align-text-top" />
+      <input type="checkbox" />
     ) : (
       <input type={type} {...props} />
     ),
@@ -56,12 +51,37 @@ const Teach = () => {
   }
 
   return (
-    <div className="teach">
+    <article className="mx-auto max-w-3xl">
       <HomeLink />
-      <Markdown components={MARKDOWN_COMPONENTS} remarkPlugins={[remarkGfm]}>
-        {markdown}
-      </Markdown>
-    </div>
+      <div className="mt-4 mb-6 flex items-center gap-4">
+        <Thumbnail
+          thumbnailUrl={teach.thumbnailUrl}
+          className="w-20 shrink-0 rounded-lg border border-line sm:w-24"
+        />
+        <div className="flex flex-col gap-1">
+          <Header>{teach.title}</Header>
+          {teach.bggUrl && (
+            <a
+              href={teach.bggUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid="bgg-link"
+              className="text-accent hover:underline"
+            >
+              View on BoardGameGeek &#x2197;
+            </a>
+          )}
+        </div>
+      </div>
+      <div
+        data-testid="teach-notes"
+        className="teach-notes rounded-xl border border-line bg-card p-5 shadow-sm sm:p-8"
+      >
+        <Markdown components={MARKDOWN_COMPONENTS} remarkPlugins={[remarkGfm]}>
+          {markdown}
+        </Markdown>
+      </div>
+    </article>
   );
 };
 

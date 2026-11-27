@@ -1,22 +1,48 @@
-import { expect, test } from "@playwright/test";
+import { expect, test } from "./fixtures";
 
 test("shows the notes on a direct visit", async ({ page }) => {
   await page.goto("/teach/calico");
 
+  await expect(page.getByTestId("page-title")).toHaveText("Calico");
+  const notes = page.getByTestId("teach-notes");
   await expect(
-    page.getByRole("heading", { level: 1, name: "Calico" }),
+    notes.getByRole("heading", { level: 3, name: "Overview" }),
   ).toBeVisible();
   await expect(
-    page.getByRole("heading", { level: 3, name: "Overview" }),
+    notes.getByRole("heading", { level: 3, name: "Patterns" }),
   ).toBeVisible();
+});
+
+test("shows the game title only once", async ({ page }) => {
+  await page.goto("/teach/calico");
+
+  await expect(page.getByTestId("teach-notes")).toContainText("Overview");
   await expect(
-    page.getByRole("heading", { level: 3, name: "Patterns" }),
-  ).toBeVisible();
+    page.getByRole("heading", { name: "Calico", exact: true }),
+  ).toHaveCount(1);
+});
+
+test("shows the game thumbnail", async ({ page }) => {
+  await page.goto("/teach/calico");
+
+  await expect(page.getByTestId("thumbnail")).toBeVisible();
+});
+
+test("links to the game on BoardGameGeek", async ({ page }) => {
+  await page.goto("/teach/calico");
+
+  await expect(page.getByTestId("bgg-link")).toHaveAttribute(
+    "href",
+    "https://boardgamegeek.com/boardgame/283155",
+  );
 });
 
 test("lets the teacher tick and untick a checklist item", async ({ page }) => {
   await page.goto("/teach/calico");
-  const checkbox = page.getByRole("checkbox").first();
+  const checkbox = page
+    .getByTestId("teach-notes")
+    .getByRole("checkbox")
+    .first();
 
   await checkbox.check();
   await expect(checkbox).toBeChecked();
@@ -28,29 +54,35 @@ test("lets the teacher tick and untick a checklist item", async ({ page }) => {
 test("goes back to the table of contents", async ({ page }) => {
   await page.goto("/teach/calico");
 
-  await page.getByRole("link", { name: "Back Home" }).click();
+  await page.getByTestId("back-home-link").click();
 
   await expect(page).toHaveURL("/");
-  await expect(
-    page.getByRole("heading", { level: 1, name: "Board Game Teach Notes" }),
-  ).toBeVisible();
+  await expect(page.getByTestId("page-title")).toHaveText(
+    "Board Game Teach Notes",
+  );
+});
+
+test("goes home from the site logo", async ({ page }) => {
+  await page.goto("/teach/calico");
+
+  await page.getByTestId("site-home-link").click();
+
+  await expect(page).toHaveURL("/");
+  await expect(page.getByTestId("page-title")).toHaveText(
+    "Board Game Teach Notes",
+  );
 });
 
 test("shows only the latest teach after moving between teaches", async ({
   page,
 }) => {
   await page.goto("/teach/calico");
-  await expect(
-    page.getByRole("heading", { level: 1, name: "Calico" }),
-  ).toBeVisible();
+  await expect(page.getByTestId("page-title")).toHaveText("Calico");
 
-  await page.getByRole("link", { name: "Back Home" }).click();
-  await page.getByRole("link", { name: "Cartographers" }).click();
+  await page.getByTestId("back-home-link").click();
+  await page.getByTestId("teach-card-cartographers").click();
 
-  await expect(
-    page.getByRole("heading", { level: 1, name: "Cartographers" }),
-  ).toBeVisible();
-  await expect(
-    page.getByRole("heading", { level: 1, name: "Calico" }),
-  ).toHaveCount(0);
+  await expect(page.getByTestId("page-title")).toHaveText("Cartographers");
+  await expect(page.getByTestId("teach-notes")).toContainText("Overview");
+  await expect(page.getByTestId("teach-notes")).not.toContainText("Calico");
 });

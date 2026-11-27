@@ -1,14 +1,25 @@
+import bggEntries from "./bgg.json";
+
 const NOTES_LOADERS = import.meta.glob<string>("./*.md", {
   query: "?raw",
   import: "default",
 });
 
-export interface TeachInfo {
+interface TeachEntry {
   teachId: string;
   title: string;
 }
 
-export const TEACHES: TeachInfo[] = [
+export interface TeachInfo extends TeachEntry {
+  bggUrl?: string;
+  thumbnailUrl?: string;
+}
+
+// Written by `pnpm bgg:update`.
+const BGG_ENTRIES: Record<string, { bggId: number; thumbnailUrl?: string }> =
+  bggEntries;
+
+const TEACH_ENTRIES: TeachEntry[] = [
   {
     teachId: "51st-state",
     title: "51st State",
@@ -47,7 +58,7 @@ export const TEACHES: TeachInfo[] = [
   },
   {
     teachId: "castles-of-burgundy",
-    title: "Castles of Burgundy",
+    title: "The Castles of Burgundy",
   },
   {
     teachId: "clank-in-space",
@@ -259,7 +270,7 @@ export const TEACHES: TeachInfo[] = [
   },
   {
     teachId: "surfosaurus-max",
-    title: "Surfosaurus Max",
+    title: "Surfosaurus MAX",
   },
   {
     teachId: "tacta",
@@ -329,7 +340,19 @@ export const TEACHES: TeachInfo[] = [
     teachId: "western-legends",
     title: "Western Legends",
   },
-].sort((a, b) => a.title.localeCompare(b.title));
+];
+
+// "The Castles of Burgundy" sorts with the Cs, as in a library catalog.
+const sortKey = (title: string) => title.replace(/^The\s+/, "");
+
+export const TEACHES: TeachInfo[] = TEACH_ENTRIES.map((teach) => {
+  const bggEntry = BGG_ENTRIES[teach.teachId];
+  return {
+    ...teach,
+    bggUrl: bggEntry && `https://boardgamegeek.com/boardgame/${bggEntry.bggId}`,
+    thumbnailUrl: bggEntry?.thumbnailUrl,
+  };
+}).sort((a, b) => sortKey(a.title).localeCompare(sortKey(b.title)));
 
 // A Map, unlike a plain object, has no inherited keys such as "constructor" to match a URL.
 export const TEACH_BY_ID = new Map(

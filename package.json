@@ -11,12 +11,13 @@
     "clean": "rm -rf dist",
     "start": "vite",
     "build": "vite build",
-    "typecheck": "tsc && tsc -p tsconfig.e2e.json",
+    "typecheck": "tsc && tsc -p tsconfig.e2e.json && tsc -p tsconfig.scripts.json",
     "lint": "biome check",
     "lint:fix": "biome check --write",
     "preview": "vite preview",
     "test:e2e": "playwright test",
-    "test:e2e:ui": "playwright test --ui"
+    "test:e2e:ui": "playwright test --ui",
+    "bgg:update": "node --env-file-if-exists=.env scripts/update-bgg.ts"
   },
   "dependencies": {
     "react": "^19.3.1",
@@ -33,6 +34,7 @@
     "@types/react": "^19.3.3",
     "@types/react-dom": "^19",
     "@vitejs/plugin-react": "^6.3.0",
+    "fast-xml-parser": "^5.12.1",
     "tailwindcss": "^4.3.5",
     "typescript": "^7.0.2",
     "vite": "^8.3.8"

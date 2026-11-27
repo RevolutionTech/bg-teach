@@ -1,4 +1,6 @@
-# Waypoints (Map 1: Whistling Water National Park)
+# Waypoints
+
+## Whistling Water National Park (Map 1)
 
 ### Overview
 
