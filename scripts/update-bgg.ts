@@ -37,6 +37,18 @@ const xmlParser = new XMLParser({
   isArray: (tagName) => tagName === "item" || tagName === "name",
 });
 
+const REFRESH_FLAG = "--refresh";
+const unknownArguments = process.argv
+  .slice(2)
+  .filter((argument) => argument !== REFRESH_FLAG);
+if (unknownArguments.length > 0) {
+  console.error(
+    `Unknown argument: ${unknownArguments.join(" ")}. Usage: pnpm bgg:update [${REFRESH_FLAG}]`,
+  );
+  process.exit(1);
+}
+const refreshAllThumbnails = process.argv.includes(REFRESH_FLAG);
+
 const token = process.env.BGG_API_TOKEN;
 if (!token) {
   console.error("Set BGG_API_TOKEN in .env. See .env.example.");
@@ -155,14 +167,23 @@ for (const teach of teaches) {
   }
 }
 
-const thumbnailUrlByBggId = await fetchThumbnailUrls([
-  ...new Set(bggIdByTeachId.values()),
-]);
+const bggIdsToFetch = new Set<number>();
+for (const [teachId, bggId] of bggIdByTeachId) {
+  if (refreshAllThumbnails || !oldEntries[teachId]?.thumbnailUrl) {
+    bggIdsToFetch.add(bggId);
+  }
+}
+const fetchedThumbnailUrlByBggId = await fetchThumbnailUrls([...bggIdsToFetch]);
 const newEntries: BggEntries = {};
 for (const [teachId, bggId] of [...bggIdByTeachId].sort(([a], [b]) =>
   a.localeCompare(b),
 )) {
-  newEntries[teachId] = { bggId, thumbnailUrl: thumbnailUrlByBggId.get(bggId) };
+  newEntries[teachId] = {
+    bggId,
+    thumbnailUrl:
+      fetchedThumbnailUrlByBggId.get(bggId) ??
+      oldEntries[teachId]?.thumbnailUrl,
+  };
   if (newEntries[teachId].thumbnailUrl == null) {
     console.log(`NO IMAGE ${teachId} (BGG ID ${bggId})`);
   }

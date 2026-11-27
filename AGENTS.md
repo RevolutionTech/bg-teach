@@ -46,7 +46,7 @@ Use Node from `.nvmrc` and pnpm.
 | `pnpm clean` | Delete `dist/` |
 | `pnpm test:e2e` | Build the site and run the Playwright end-to-end tests |
 | `pnpm test:e2e:ui` | Run the end-to-end tests in Playwright's UI mode |
-| `pnpm bgg:update` | Find BGG IDs for new teaches and refresh thumbnail URLs in `bgg.json` |
+| `pnpm bgg:update` | Find BGG IDs for new teaches and fetch thumbnail URLs for teaches that have none in `bgg.json`. Add `--refresh` to fetch every thumbnail URL again |
 
 `pnpm bgg:update` needs a BoardGameGeek XML API token. Copy `.env.example` to `.env` and set `BGG_API_TOKEN`. The site loads thumbnails from BGG's image CDN, so the build and CI do not need the token.
 

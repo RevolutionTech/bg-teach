@@ -17,7 +17,7 @@ This skill creates teach notes for board games — concise, bullet-point referen
 3. **Write the teach notes** following the formatting and content guidelines below. Save them to `src/teaches/<teach-id>.md`, where `<teach-id>` is the game's title in kebab-case (e.g., `castles-of-burgundy.md`).
 4. **Register the teach** in `src/teaches/teaches.ts`:
    - Add `{ teachId: "<teach-id>", title: "<Game Title>" }` to `TEACH_ENTRIES`, next to the entries for neighboring titles. The app loads the notes from `<teach-id>.md`, so the `teachId` must match the file name exactly. The list is sorted by `title` at runtime, ignoring a leading "The", so use the game's full title (with "The" if it has one) and keep the title identical to the `#` heading in the Markdown file.
-5. **Add the thumbnail** — Run `pnpm bgg:update`. It needs `BGG_API_TOKEN` in `.env` (see `.env.example`). The script finds the game's BGG ID by title and writes the ID and thumbnail URL to `src/teaches/bgg.json`.
+5. **Add the thumbnail** — Run `pnpm bgg:update`. It needs `BGG_API_TOKEN` in `.env` (see `.env.example`). The script finds the game's BGG ID by title and writes the ID and thumbnail URL to `src/teaches/bgg.json`. It does not change thumbnails that already exist.
    - If the script prints `UNSURE` for the teach, pick the correct BGG ID from the candidates (confirm with the user if unclear), add `"<teach-id>": { "bggId": <id> }` to `bgg.json`, and run the script again.
    - If there is no token, skip this step and tell the user. The card shows a placeholder until someone runs the script.
 6. **Report** to the user: citations (rulebook pages, BGG references, etc.) and any rules you were uncertain about. Never put these in the Markdown file.
