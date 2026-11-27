@@ -5,8 +5,11 @@ resource "aws_acm_certificate" "static_website" {
   tags = local.tags
 }
 
-resource "aws_cloudfront_origin_access_identity" "static_website" {
-  comment = "OAI for ${local.domain_name}"
+resource "aws_cloudfront_origin_access_control" "static_website" {
+  name                              = local.domain_name
+  origin_access_control_origin_type = "s3"
+  signing_behavior                  = "always"
+  signing_protocol                  = "sigv4"
 }
 
 resource "aws_cloudfront_distribution" "static_website" {
@@ -14,16 +17,14 @@ resource "aws_cloudfront_distribution" "static_website" {
   aliases             = [local.domain_name]
   default_root_object = "index.html"
   origin {
-    domain_name = aws_s3_bucket.static_website.bucket_regional_domain_name
-    origin_id   = local.domain_name
-    s3_origin_config {
-      origin_access_identity = aws_cloudfront_origin_access_identity.static_website.cloudfront_access_identity_path
-    }
+    domain_name              = aws_s3_bucket.static_website.bucket_regional_domain_name
+    origin_id                = local.domain_name
+    origin_access_control_id = aws_cloudfront_origin_access_control.static_website.id
   }
   custom_error_response {
     error_code         = 403
     response_code      = 404
-    response_page_path = "/${local.error_page}"
+    response_page_path = "/index.html"
   }
   default_cache_behavior {
     allowed_methods        = ["GET", "HEAD"]

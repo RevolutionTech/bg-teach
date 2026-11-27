@@ -38,17 +38,19 @@ resource "aws_iam_role" "ci" {
 
 resource "aws_iam_policy" "s3_rw" {
   name        = "${local.github_repo}-s3-rw"
-  description = "Policy for full S3 access."
+  description = "Lets CI sync static content to the ${local.domain_name} bucket."
   policy = jsonencode({
     Version = "2012-10-17"
     Statement = [
       {
-        Action = "s3:*"
-        Effect = "Allow"
-        Resource = [
-          aws_s3_bucket.static_website.arn,
-          "${aws_s3_bucket.static_website.arn}/*"
-        ]
+        Action   = "s3:ListBucket"
+        Effect   = "Allow"
+        Resource = aws_s3_bucket.static_website.arn
+      },
+      {
+        Action   = ["s3:PutObject", "s3:DeleteObject"]
+        Effect   = "Allow"
+        Resource = "${aws_s3_bucket.static_website.arn}/*"
       }
     ]
   })

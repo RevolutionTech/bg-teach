@@ -17,7 +17,6 @@ locals {
   domain_name = "bgteach.revolutiontech.ca"
   github_org  = "RevolutionTech"
   github_repo = "bg-teach"
-  error_page  = "index.html"
 
   tags = {
     Tool = "terraform"
