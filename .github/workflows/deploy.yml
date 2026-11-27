@@ -6,10 +6,10 @@ permissions:
 
 jobs:
   deploy:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-26.04
     environment: prod
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v7
       - uses: pnpm/action-setup@v6
       - uses: actions/setup-node@v7
         with:
@@ -18,7 +18,7 @@ jobs:
       - run: pnpm install --frozen-lockfile
 
       - run: pnpm build
-      - uses: aws-actions/configure-aws-credentials@v3.0.1
+      - uses: aws-actions/configure-aws-credentials@v6
         with:
           role-to-assume: ${{ vars.IAM_ROLE_ARN }}
           aws-region: us-east-1
