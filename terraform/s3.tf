@@ -14,6 +14,21 @@ resource "aws_s3_bucket_policy" "static_website_read" {
         Effect   = "Allow"
         Resource = "${aws_s3_bucket.static_website.arn}/*"
         Principal = {
+          Service = "cloudfront.amazonaws.com"
+        }
+        Condition = {
+          StringEquals = {
+            "AWS:SourceArn" = aws_cloudfront_distribution.static_website.arn
+          }
+        }
+      },
+      # Edge locations keep using the OAI until the distribution change
+      # finishes deploying, so the bucket must trust both until then.
+      {
+        Action   = "s3:GetObject"
+        Effect   = "Allow"
+        Resource = "${aws_s3_bucket.static_website.arn}/*"
+        Principal = {
           AWS = aws_cloudfront_origin_access_identity.static_website.iam_arn
         }
       }
