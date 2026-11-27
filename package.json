@@ -2,6 +2,7 @@
   "name": "bg-teach",
   "version": "1.0.0",
   "license": "ISC",
+  "type": "module",
   "engines": {
     "node": ">=26"
   },
@@ -20,21 +21,20 @@
     "react-dom": "^19.3.1",
     "react-markdown": "^10.1.0",
     "react-router": "^8.5.3",
-    "remark-gfm": "^4.0.1",
-    "tailwindcss": "^3.0.1"
+    "remark-gfm": "^4.0.1"
   },
   "devDependencies": {
+    "@tailwindcss/vite": "^4.3.5",
     "@types/lodash": "^4.14.182",
     "@types/react": "^19.3.3",
     "@types/react-dom": "^19",
     "@typescript-eslint/eslint-plugin": "^5.29.0",
     "@typescript-eslint/parser": "^5.29.0",
     "@vitejs/plugin-react": "^6.3.0",
-    "autoprefixer": "^10.4.0",
     "eslint": "^8.18.0",
     "eslint-plugin-react": "^7.30.1",
-    "postcss": "^8.4.14",
     "prettier": "^2.5.1",
+    "tailwindcss": "^4.3.5",
     "typescript": "^6.0.3",
     "vite": "^8.4.0"
   }
