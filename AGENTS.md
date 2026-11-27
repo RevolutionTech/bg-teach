@@ -20,7 +20,8 @@ src/
     <teach-id>.md      Teach notes for one game
     teaches.ts         Registry of all teaches
 .claude/skills/create-teach-notes/  Workflow and style guide for new teach notes
-.github/workflows/     CI (typecheck, lint, build) and deploy to S3
+e2e/                   Playwright end-to-end tests
+.github/workflows/     CI (typecheck, lint, build, end-to-end tests) and deploy to S3
 terraform/             AWS hosting infrastructure
 ```
 
@@ -40,5 +41,13 @@ Use Node from `.nvmrc` and pnpm.
 | `pnpm lint` | Check lint and formatting with Biome |
 | `pnpm lint:fix` | Fix lint and formatting issues |
 | `pnpm clean` | Delete `dist/` |
+| `pnpm test:e2e` | Build the site and run the Playwright end-to-end tests |
+| `pnpm test:e2e:ui` | Run the end-to-end tests in Playwright's UI mode |
 
-There are no automated tests. CI runs `pnpm typecheck`, `pnpm lint`, and `pnpm build`. Run all three before you push.
+Before you run the end-to-end tests for the first time, install the browser with `pnpm exec playwright install chromium`.
+
+CI runs `pnpm typecheck`, `pnpm lint`, `pnpm build`, and `pnpm test:e2e`. Run all four before you push.
+
+## Tests
+
+End-to-end tests are in `e2e/` and run against the production build. They use the `calico` and `cartographers` teaches as fixtures. If you remove or rename one of these teaches, update the tests.
